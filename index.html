@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -33,7 +34,8 @@
       font-optical-sizing: auto;
     }
     .hero-image {
-      background-image: linear-gradient(180deg, rgba(20, 37, 61, 0.4) 0%, rgba(20, 37, 61, 0.55) 55%, rgba(242, 234, 220, 0.95) 100%), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=2400&q=80');
+      /* TODO LEO: reemplazar URL por foto real de la fachada o vista al mar (mín. 2400px ancho) */
+      background-image: linear-gradient(180deg, rgba(20, 37, 61, 0.4) 0%, rgba(20, 37, 61, 0.55) 55%, rgba(242, 234, 220, 0.95) 100%), url('https://placehold.co/2400x1600/14253D/F2EADC?text=FOTO+FACHADA+ALULA+1932');
       background-size: cover;
       background-position: center;
     }
@@ -105,6 +107,7 @@
 <body class="overflow-x-hidden">
 
   <!-- ═══════ NAV ═══════ -->
+
   <nav class="fixed top-0 left-0 right-0 z-50 nav-blur border-b border-stone-300/40">
     <div class="max-w-7xl mx-auto px-5 md:px-10 py-4 flex items-center justify-between">
       <a href="#" class="flex items-baseline gap-2.5">
@@ -122,6 +125,7 @@
   </nav>
 
   <!-- ═══════ HERO ═══════ -->
+
   <section class="hero-image relative min-h-screen flex items-end pb-20 pt-32">
     <div class="absolute left-6 md:left-10 top-1/2 -translate-y-1/2 hidden lg:block">
       <span class="vertical-text text-[11px] uppercase font-medium" style="color: var(--crema); opacity: 0.75">Loma de Santa Cecilia · Mar del Plata</span>
@@ -157,11 +161,13 @@
   </section>
 
   <!-- ═══════ HISTORIA ═══════ -->
+
   <section id="historia" class="relative py-24 md:py-40 overflow-hidden">
     <div class="max-w-7xl mx-auto px-6 md:px-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
       <div class="lg:col-span-5 order-2 lg:order-1">
         <div class="relative">
-          <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1100&q=80" alt="Detalle arquitectónico de la casa Alula" class="w-full h-[55vh] md:h-[65vh] object-cover rounded-sm shadow-2xl" />
+          <!-- TODO LEO: foto vertical de detalle arquitectónico (arco, ventana, ladrillo, teja) -->
+          <img src="https://placehold.co/1100x1400/E5DAC4/14253D?text=DETALLE+ARQUITECT%C3%93NICO" alt="Detalle arquitectónico de la casa Alula" class="w-full h-[55vh] md:h-[65vh] object-cover rounded-sm shadow-2xl" />
           <div class="absolute -bottom-6 -right-6 md:-bottom-10 md:-right-10 px-7 py-5 md:px-10 md:py-7" style="background: var(--marino); color: var(--crema)">
             <div class="font-display text-4xl md:text-6xl leading-none">1932</div>
             <div class="text-[10px] uppercase tracking-[0.3em] mt-2 opacity-80">Año fundacional</div>
@@ -176,7 +182,7 @@
         </h2>
         <div class="space-y-5 text-base md:text-lg leading-relaxed max-w-xl" style="color: var(--marino)">
           <p>En la Loma de Santa Cecilia —el punto fundacional de Mar del Plata— se levanta una joya pintoresquista de 650 m² firmada en 1932 por el arquitecto Alula Baldassarini. Tejas, ladrillo visto, ventanales en arco y el rumor del mar que se cuela entre los pinos.</p>
-          <p>Adentro, la chimenea a leña sigue encendida en invierno. Afuera, el balcón panorámico mira la costa de La Perla. Es un hostel, sí, pero también es una casa con memoria —pensada para nómadas digitales, viajeros lentos y quienes saben que dormir bajo techos así no se olvida.</p>
+          <p>Adentro, los techos altos, los pisos originales y la luz que entra distinta en cada hora del día. Afuera, el balcón panorámico mira la costa de La Perla. Es un hostel, sí, pero también es una casa con memoria —pensada para nómadas digitales, viajeros lentos y quienes saben que dormir bajo techos así no se olvida.</p>
         </div>
         <div class="grid grid-cols-3 gap-6 mt-12 pt-10 border-t" style="border-color: rgba(20,37,61,0.15)">
           <div>
@@ -199,6 +205,7 @@
   <div class="max-w-7xl mx-auto px-6 md:px-10"><div class="divider-line"></div></div>
 
   <!-- ═══════ SERVICIOS ═══════ -->
+
   <section id="servicios" class="relative py-24 md:py-32">
     <div class="max-w-7xl mx-auto px-6 md:px-10">
       <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-14 md:mb-16 gap-6">
@@ -214,47 +221,44 @@
         </p>
       </div>
 
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-px" style="background: rgba(20,37,61,0.12)">
-        <div class="service-card p-7 md:p-10 flex flex-col gap-6 min-h-[230px]" style="background: var(--crema)">
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" style="color: var(--marino)"><path d="M12 20h.01"/><path d="M2 8.5a16 16 0 0 1 20 0"/><path d="M5 12.5a11 11 0 0 1 14 0"/><path d="M8.5 16.5a6 6 0 0 1 7 0"/></svg>
-          <div>
-            <h3 class="font-display text-lg md:text-xl mb-1.5" style="color: var(--marino)">WiFi alta velocidad</h3>
-            <p class="text-sm opacity-70 leading-relaxed" style="color: var(--marino)">Fibra dedicada en cada rincón. Pensada para nómadas y videollamadas.</p>
-          </div>
-        </div>
-        <div class="service-card p-7 md:p-10 flex flex-col gap-6 min-h-[230px]" style="background: var(--crema)">
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" style="color: var(--marino)"><path d="M3 11h18"/><path d="M5 11V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v5"/><path d="M5 11v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-8"/><path d="M9 7h6"/></svg>
-          <div>
-            <h3 class="font-display text-lg md:text-xl mb-1.5" style="color: var(--marino)">Cocina equipada</h3>
-            <p class="text-sm opacity-70 leading-relaxed" style="color: var(--marino)">Espaciosa y luminosa, con todo lo necesario para cocinar como en casa.</p>
-          </div>
-        </div>
-        <div class="service-card p-7 md:p-10 flex flex-col gap-6 min-h-[230px]" style="background: var(--crema)">
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" style="color: var(--marino)"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg>
-          <div>
-            <h3 class="font-display text-lg md:text-xl mb-1.5" style="color: var(--marino)">Café y té de cortesía</h3>
-            <p class="text-sm opacity-70 leading-relaxed" style="color: var(--marino)">Disponibles las 24 horas. Tueste local seleccionado.</p>
-          </div>
-        </div>
-        <div class="service-card p-7 md:p-10 flex flex-col gap-6 min-h-[230px]" style="background: var(--crema)">
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" style="color: var(--marino)"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-          <div>
-            <h3 class="font-display text-lg md:text-xl mb-1.5" style="color: var(--marino)">Coworking</h3>
-            <p class="text-sm opacity-70 leading-relaxed" style="color: var(--marino)">Mesas amplias, enchufes y luz natural. Para viajar con la oficina.</p>
-          </div>
-        </div>
-        <div class="service-card p-7 md:p-10 flex flex-col gap-6 min-h-[230px]" style="background: var(--crema)">
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" style="color: var(--marino)"><path d="M3 21V10l9-7 9 7v11"/><path d="M9 21v-7h6v7"/><path d="M5 14h2M17 14h2"/></svg>
-          <div>
-            <h3 class="font-display text-lg md:text-xl mb-1.5" style="color: var(--marino)">Living histórico</h3>
-            <p class="text-sm opacity-70 leading-relaxed" style="color: var(--marino)">Hogar a leña, sillones de cuero y vista al mar. El corazón de la casa.</p>
-          </div>
-        </div>
+```
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-px" style="background: rgba(20,37,61,0.12)">
+    <div class="service-card p-7 md:p-10 flex flex-col gap-6 min-h-[230px]" style="background: var(--crema)">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" style="color: var(--marino)"><path d="M12 20h.01"/><path d="M2 8.5a16 16 0 0 1 20 0"/><path d="M5 12.5a11 11 0 0 1 14 0"/><path d="M8.5 16.5a6 6 0 0 1 7 0"/></svg>
+      <div>
+        <h3 class="font-display text-lg md:text-xl mb-1.5" style="color: var(--marino)">WiFi alta velocidad</h3>
+        <p class="text-sm opacity-70 leading-relaxed" style="color: var(--marino)">Fibra dedicada en cada rincón. Pensada para nómadas y videollamadas.</p>
       </div>
     </div>
+    <div class="service-card p-7 md:p-10 flex flex-col gap-6 min-h-[230px]" style="background: var(--crema)">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" style="color: var(--marino)"><path d="M3 11h18"/><path d="M5 11V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v5"/><path d="M5 11v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-8"/><path d="M9 7h6"/></svg>
+      <div>
+        <h3 class="font-display text-lg md:text-xl mb-1.5" style="color: var(--marino)">Cocina equipada</h3>
+        <p class="text-sm opacity-70 leading-relaxed" style="color: var(--marino)">Espaciosa y luminosa, con todo lo necesario para cocinar como en casa.</p>
+      </div>
+    </div>
+    <div class="service-card p-7 md:p-10 flex flex-col gap-6 min-h-[230px]" style="background: var(--crema)">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" style="color: var(--marino)"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg>
+      <div>
+        <h3 class="font-display text-lg md:text-xl mb-1.5" style="color: var(--marino)">Café y té de cortesía</h3>
+        <p class="text-sm opacity-70 leading-relaxed" style="color: var(--marino)">Disponibles las 24 horas. Tueste local seleccionado.</p>
+      </div>
+    </div>
+    <div class="service-card p-7 md:p-10 flex flex-col gap-6 min-h-[230px]" style="background: var(--crema)">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" style="color: var(--marino)"><path d="M3 21V10l9-7 9 7v11"/><path d="M9 21v-7h6v7"/><path d="M5 14h2M17 14h2"/></svg>
+      <div>
+        <h3 class="font-display text-lg md:text-xl mb-1.5" style="color: var(--marino)">Living histórico</h3>
+        <p class="text-sm opacity-70 leading-relaxed" style="color: var(--marino)">Sillones cómodos, techos altos y vista al mar. El corazón de la casa.</p>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
   </section>
 
   <!-- ═══════ HABITACIONES ═══════ -->
+
   <section id="habitaciones" class="relative py-24 md:py-32" style="background: var(--marino); color: var(--crema)">
     <div class="max-w-7xl mx-auto px-6 md:px-10">
       <div class="text-center mb-14 md:mb-16 max-w-2xl mx-auto">
@@ -266,64 +270,71 @@
         <p class="opacity-75 text-base md:text-lg max-w-xl mx-auto">Camas amplias, ropa blanca de hostel boutique, ventanas grandes y un silencio que solo se rompe con el viento del mar.</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-        <article class="group">
-          <div class="overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900&q=80" alt="Dormitorio compartido de 4 camas" class="w-full h-72 md:h-80 object-cover group-hover:scale-105 transition duration-700"/>
-          </div>
-          <div class="pt-6 flex justify-between items-start gap-4">
-            <div>
-              <h3 class="font-display text-2xl mb-1">Dormitorio · 4 camas</h3>
-              <p class="text-sm opacity-70">Mixto · baño compartido · luz natural</p>
-            </div>
-            <div class="text-right shrink-0">
-              <div class="text-[10px] uppercase tracking-[0.2em] opacity-60">Desde</div>
-              <div class="font-display text-xl">USD 18</div>
-            </div>
-          </div>
-        </article>
-        <article class="group">
-          <div class="overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=900&q=80" alt="Dormitorio compartido de 6 camas" class="w-full h-72 md:h-80 object-cover group-hover:scale-105 transition duration-700"/>
-          </div>
-          <div class="pt-6 flex justify-between items-start gap-4">
-            <div>
-              <h3 class="font-display text-2xl mb-1">Dormitorio · 6 camas</h3>
-              <p class="text-sm opacity-70">Mixto · cortinado individual · luminoso</p>
-            </div>
-            <div class="text-right shrink-0">
-              <div class="text-[10px] uppercase tracking-[0.2em] opacity-60">Desde</div>
-              <div class="font-display text-xl">USD 15</div>
-            </div>
-          </div>
-        </article>
-        <article class="group">
-          <div class="overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=900&q=80" alt="Dormitorio compartido de 8 camas con vista" class="w-full h-72 md:h-80 object-cover group-hover:scale-105 transition duration-700"/>
-          </div>
-          <div class="pt-6 flex justify-between items-start gap-4">
-            <div>
-              <h3 class="font-display text-2xl mb-1">Dormitorio · 8 camas</h3>
-              <p class="text-sm opacity-70">Mixto · vista al mar · espacioso</p>
-            </div>
-            <div class="text-right shrink-0">
-              <div class="text-[10px] uppercase tracking-[0.2em] opacity-60">Desde</div>
-              <div class="font-display text-xl">USD 13</div>
-            </div>
-          </div>
-        </article>
+```
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+    <article class="group">
+      <div class="overflow-hidden">
+        <!-- TODO LEO: foto del dormitorio de 4 camas -->
+        <img src="https://placehold.co/900x700/1F3552/F2EADC?text=DORMITORIO+4+CAMAS" alt="Dormitorio compartido de 4 camas" class="w-full h-72 md:h-80 object-cover group-hover:scale-105 transition duration-700"/>
       </div>
+      <div class="pt-6 flex justify-between items-start gap-4">
+        <div>
+          <h3 class="font-display text-2xl mb-1">Dormitorio · 4 camas</h3>
+          <p class="text-sm opacity-70">Mixto · baño compartido · luz natural</p>
+        </div>
+        <div class="text-right shrink-0">
+          <div class="text-[10px] uppercase tracking-[0.2em] opacity-60">Desde</div>
+          <div class="font-display text-xl">USD 18</div>
+        </div>
+      </div>
+    </article>
+    <article class="group">
+      <div class="overflow-hidden">
+        <!-- TODO LEO: foto del dormitorio de 6 camas -->
+        <img src="https://placehold.co/900x700/1F3552/F2EADC?text=DORMITORIO+6+CAMAS" alt="Dormitorio compartido de 6 camas" class="w-full h-72 md:h-80 object-cover group-hover:scale-105 transition duration-700"/>
+      </div>
+      <div class="pt-6 flex justify-between items-start gap-4">
+        <div>
+          <h3 class="font-display text-2xl mb-1">Dormitorio · 6 camas</h3>
+          <p class="text-sm opacity-70">Mixto · cortinado individual · luminoso</p>
+        </div>
+        <div class="text-right shrink-0">
+          <div class="text-[10px] uppercase tracking-[0.2em] opacity-60">Desde</div>
+          <div class="font-display text-xl">USD 15</div>
+        </div>
+      </div>
+    </article>
+    <article class="group">
+      <div class="overflow-hidden">
+        <!-- TODO LEO: foto del dormitorio de 8 camas (ideal con vista al mar) -->
+        <img src="https://placehold.co/900x700/1F3552/F2EADC?text=DORMITORIO+8+CAMAS" alt="Dormitorio compartido de 8 camas con vista" class="w-full h-72 md:h-80 object-cover group-hover:scale-105 transition duration-700"/>
+      </div>
+      <div class="pt-6 flex justify-between items-start gap-4">
+        <div>
+          <h3 class="font-display text-2xl mb-1">Dormitorio · 8 camas</h3>
+          <p class="text-sm opacity-70">Mixto · vista al mar · espacioso</p>
+        </div>
+        <div class="text-right shrink-0">
+          <div class="text-[10px] uppercase tracking-[0.2em] opacity-60">Desde</div>
+          <div class="font-display text-xl">USD 13</div>
+        </div>
+      </div>
+    </article>
+  </div>
 
-      <div class="text-center mt-14">
-        <a href="#reservar" class="inline-flex items-center gap-3 px-8 py-4 rounded-full text-[11px] uppercase tracking-[0.3em] font-medium border transition hover:bg-white/5" style="border-color: var(--madera); color: var(--madera-claro)">
-          Ver disponibilidad
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-    </div>
+  <div class="text-center mt-14">
+    <a href="#reservar" class="inline-flex items-center gap-3 px-8 py-4 rounded-full text-[11px] uppercase tracking-[0.3em] font-medium border transition hover:bg-white/5" style="border-color: var(--madera); color: var(--madera-claro)">
+      Ver disponibilidad
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</div>
+```
+
   </section>
 
   <!-- ═══════ UBICACIÓN ═══════ -->
+
   <section id="ubicacion" class="relative py-24 md:py-32">
     <div class="max-w-7xl mx-auto px-6 md:px-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
       <div>
@@ -338,45 +349,80 @@
           <div class="text-base opacity-75" style="color: var(--marino)">La Perla · Mar del Plata · Buenos Aires · Argentina</div>
         </div>
 
-        <div class="flex flex-wrap gap-4">
-          <a href="https://www.google.com/maps/search/?api=1&query=Av.+Patricio+Peralta+Ramos+1361+Mar+del+Plata" target="_blank" rel="noopener" class="btn-primary inline-flex items-center gap-3 px-8 py-4 rounded-full text-[11px] uppercase tracking-[0.25em] font-medium">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Cómo llegar
-          </a>
-          <a href="#reservar" class="btn-outline inline-flex items-center gap-3 px-8 py-4 rounded-full text-[11px] uppercase tracking-[0.25em] font-medium">
-            Consultar disponibilidad
-          </a>
-        </div>
+```
+    <div class="flex flex-wrap gap-4">
+      <a href="https://www.google.com/maps/search/?api=1&query=Av.+Patricio+Peralta+Ramos+1361+Mar+del+Plata" target="_blank" rel="noopener" class="btn-primary inline-flex items-center gap-3 px-8 py-4 rounded-full text-[11px] uppercase tracking-[0.25em] font-medium">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Cómo llegar
+      </a>
+      <a href="#reservar" class="btn-outline inline-flex items-center gap-3 px-8 py-4 rounded-full text-[11px] uppercase tracking-[0.25em] font-medium">
+        Consultar disponibilidad
+      </a>
+    </div>
 
-        <div class="grid grid-cols-2 gap-6 mt-12 pt-10 border-t max-w-md" style="border-color: rgba(20,37,61,0.15); color: var(--marino)">
-          <div>
-            <div class="text-[10px] uppercase tracking-[0.3em] opacity-60 mb-1.5">Aeropuerto Astor Piazzolla</div>
-            <div class="font-display text-xl">15 min</div>
-          </div>
-          <div>
-            <div class="text-[10px] uppercase tracking-[0.3em] opacity-60 mb-1.5">Terminal de ómnibus</div>
-            <div class="font-display text-xl">8 min</div>
-          </div>
-        </div>
+    <div class="grid grid-cols-2 gap-6 mt-12 pt-10 border-t max-w-md" style="border-color: rgba(20,37,61,0.15); color: var(--marino)">
+      <div>
+        <div class="text-[10px] uppercase tracking-[0.3em] opacity-60 mb-1.5">Aeropuerto Astor Piazzolla</div>
+        <div class="font-display text-xl">15 min</div>
       </div>
+      <div>
+        <div class="text-[10px] uppercase tracking-[0.3em] opacity-60 mb-1.5">Terminal de ómnibus</div>
+        <div class="font-display text-xl">8 min</div>
+      </div>
+    </div>
+  </div>
 
-      <div class="relative aspect-[4/5] lg:aspect-auto lg:h-[600px]">
-        <iframe
-          title="Mapa de Alula Hostel"
-          src="https://www.google.com/maps?q=Av.+Patricio+Peralta+Ramos+1361,+Mar+del+Plata&output=embed"
-          class="w-full h-full map-frame"
-          style="border:0"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <div class="absolute -bottom-6 -left-6 md:-bottom-8 md:-left-8 px-5 py-3 md:px-7 md:py-4 max-w-[80%]" style="background: var(--marino); color: var(--crema)">
-          <div class="font-display text-base md:text-lg italic">"Frente al mar, donde nació la ciudad."</div>
+  <div class="relative aspect-[4/5] lg:aspect-auto lg:h-[600px]">
+    <iframe
+      title="Mapa de Alula Hostel"
+      src="https://www.google.com/maps?q=Av.+Patricio+Peralta+Ramos+1361,+Mar+del+Plata&output=embed"
+      class="w-full h-full map-frame"
+      style="border:0"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="absolute -bottom-6 -left-6 md:-bottom-8 md:-left-8 px-5 py-3 md:px-7 md:py-4 max-w-[80%]" style="background: var(--marino); color: var(--crema)">
+      <div class="font-display text-base md:text-lg italic">"Frente al mar, donde nació la ciudad."</div>
+    </div>
+  </div>
+</div>
+```
+
+  </section>
+
+  <!-- ═══════ SUMATE A LA GUÍA (UGC) ═══════ -->
+
+  <section id="sumar-lugar" class="relative py-24 md:py-32" style="background: var(--crema-claro); border-top: 1px solid rgba(20,37,61,0.08); border-bottom: 1px solid rgba(20,37,61,0.08)">
+    <div class="max-w-5xl mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-14 items-center">
+      <div class="md:col-span-7">
+        <span class="inline-block text-[10px] uppercase tracking-[0.4em] font-medium mb-4" style="color: var(--terracota)">— Hecho por la comunidad</span>
+        <h2 class="font-display font-light text-4xl md:text-5xl leading-[1.05] mb-6" style="color: var(--marino)">
+          La guía de Mar del Plata<br/>
+          <em class="italic">la escriben los huéspedes.</em>
+        </h2>
+        <p class="text-base md:text-lg opacity-80 leading-relaxed mb-7 max-w-xl" style="color: var(--marino)">
+          ¿Encontraste un café escondido, una playa que pocos conocen, una librería con alma? Compartilo. Coni revisa cada sugerencia y, si suma, queda publicada con tu nombre en la guía de Alula.
+        </p>
+        <button id="abrirSugerirModal" type="button" class="btn-primary inline-flex items-center gap-3 px-8 py-4 rounded-full text-[11px] uppercase tracking-[0.25em] font-medium">
+          Sumar mi lugar favorito
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+      <div class="md:col-span-5">
+        <div class="relative px-7 py-8 md:px-9 md:py-10" style="background: var(--marino); color: var(--crema)">
+          <div class="text-[10px] uppercase tracking-[0.3em] opacity-60 mb-4">Cómo funciona</div>
+          <ol class="space-y-4 text-sm">
+            <li class="flex gap-4"><span class="font-display text-xl shrink-0" style="color: var(--madera-claro)">01</span><span>Mandanos tu sugerencia con foto y una línea de por qué te gustó.</span></li>
+            <li class="flex gap-4"><span class="font-display text-xl shrink-0" style="color: var(--madera-claro)">02</span><span>Coni la revisa y aprueba en menos de 24hs.</span></li>
+            <li class="flex gap-4"><span class="font-display text-xl shrink-0" style="color: var(--madera-claro)">03</span><span>Queda publicada con tu nombre y, si querés, tu Instagram.</span></li>
+          </ol>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ═══════ CTA RESERVAR ═══════ -->
+
   <section id="reservar" class="relative py-24 md:py-32" style="background: var(--piedra)">
     <div class="max-w-4xl mx-auto px-6 md:px-10 text-center">
       <span class="inline-block text-[10px] uppercase tracking-[0.4em] font-medium mb-4" style="color: var(--terracota)">— Reservá tu estadía</span>
@@ -385,17 +431,15 @@
       </h2>
       <p class="text-base md:text-lg opacity-80 mb-10 max-w-2xl mx-auto" style="color: var(--marino)">Escribinos por WhatsApp o reservá directo. Respondemos en minutos. Sin comisiones de plataformas.</p>
       <div class="flex flex-wrap justify-center gap-4">
-        <a href="https://wa.me/5492235365385?text=Hola!%20Quiero%20reservar%20en%20Alula%20Hostel" target="_blank" rel="noopener" class="btn-primary inline-flex items-center gap-3 px-8 py-4 rounded-full text-[11px] uppercase tracking-[0.25em] font-medium">
+        <a href="https://wa.me/5492234397923?text=Hola!%20Quiero%20reservar%20en%20Alula%20Hostel" target="_blank" rel="noopener" class="btn-primary inline-flex items-center gap-3 px-8 py-4 rounded-full text-[11px] uppercase tracking-[0.25em] font-medium">
           Reservar por WhatsApp
-        </a>
-        <a href="mailto:hola@alulahostel.com" class="btn-outline inline-flex items-center gap-3 px-8 py-4 rounded-full text-[11px] uppercase tracking-[0.25em] font-medium">
-          Enviar email
         </a>
       </div>
     </div>
   </section>
 
   <!-- ═══════ FOOTER ═══════ -->
+
   <footer class="py-16 md:py-20" style="background: var(--marino); color: var(--crema)">
     <div class="max-w-7xl mx-auto px-6 md:px-10">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 mb-14 pb-14 border-b" style="border-color: rgba(242,234,220,0.15)">
@@ -426,8 +470,317 @@
     </div>
   </footer>
 
+  <!-- ═══════ MODAL SUGERIR LUGAR ═══════ -->
+
+  <div id="sugerirModal" class="fixed inset-0 z-[60] hidden items-end md:items-center justify-center" aria-hidden="true">
+    <div id="sugerirOverlay" class="absolute inset-0" style="background: rgba(20,37,61,0.55); backdrop-filter: blur(4px)"></div>
+    <div class="relative w-full md:max-w-lg max-h-[92vh] overflow-y-auto rounded-t-3xl md:rounded-2xl shadow-2xl" style="background: var(--crema)">
+      <div class="sticky top-0 z-10 px-6 md:px-8 pt-6 pb-4 flex items-start justify-between" style="background: var(--crema)">
+        <div>
+          <div class="text-[10px] uppercase tracking-[0.3em] opacity-60 mb-1" style="color: var(--marino)">Sumar a la guía</div>
+          <h3 class="font-display text-2xl md:text-3xl leading-tight" style="color: var(--marino)">Tu lugar favorito de MdP</h3>
+        </div>
+        <button id="cerrarSugerirModal" type="button" class="shrink-0 -mt-1 -mr-2 w-9 h-9 flex items-center justify-center rounded-full hover:bg-stone-300/40 transition" aria-label="Cerrar">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--marino)"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+```
+  <form id="sugerirForm" class="px-6 md:px-8 pb-8 space-y-5" novalidate>
+    <!-- Honeypot anti-bot (no tocar) -->
+    <div style="position:absolute; left:-9999px; top:-9999px;" aria-hidden="true">
+      <label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+    </div>
+
+    <div>
+      <label class="block text-[10px] uppercase tracking-[0.2em] font-medium mb-2" style="color: var(--marino)">Tu nombre *</label>
+      <input type="text" name="nombre" required maxlength="40" class="w-full px-4 py-3 border rounded-lg text-sm bg-white focus:outline-none focus:ring-2" style="border-color: rgba(20,37,61,0.2); color: var(--marino)" placeholder="Lucas">
+    </div>
+
+    <div class="grid grid-cols-2 gap-4">
+      <div>
+        <label class="block text-[10px] uppercase tracking-[0.2em] font-medium mb-2" style="color: var(--marino)">Instagram (opcional)</label>
+        <input type="text" name="instagram" maxlength="30" class="w-full px-4 py-3 border rounded-lg text-sm bg-white focus:outline-none focus:ring-2" style="border-color: rgba(20,37,61,0.2); color: var(--marino)" placeholder="@usuario">
+      </div>
+      <div>
+        <label class="block text-[10px] uppercase tracking-[0.2em] font-medium mb-2" style="color: var(--marino)">Te alojaste en</label>
+        <input type="text" name="cuandoSeAlojo" maxlength="30" class="w-full px-4 py-3 border rounded-lg text-sm bg-white focus:outline-none focus:ring-2" style="border-color: rgba(20,37,61,0.2); color: var(--marino)" placeholder="Marzo 2026">
+      </div>
+    </div>
+
+    <div class="pt-3 border-t" style="border-color: rgba(20,37,61,0.12)">
+      <label class="block text-[10px] uppercase tracking-[0.2em] font-medium mb-2" style="color: var(--marino)">Categoría *</label>
+      <select name="categoria" required class="w-full px-4 py-3 border rounded-lg text-sm bg-white focus:outline-none focus:ring-2" style="border-color: rgba(20,37,61,0.2); color: var(--marino)">
+        <option value="">Elegí una categoría</option>
+        <option value="cafe">Café / Brunch</option>
+        <option value="restaurante">Restaurante</option>
+        <option value="playa">Playa / Naturaleza</option>
+        <option value="bar">Bar / Vida nocturna</option>
+        <option value="cultura">Cultura / Arte</option>
+        <option value="tienda">Tienda / Mercado</option>
+        <option value="otro">Otro</option>
+      </select>
+    </div>
+
+    <div>
+      <label class="block text-[10px] uppercase tracking-[0.2em] font-medium mb-2" style="color: var(--marino)">Nombre del lugar *</label>
+      <input type="text" name="lugar" required maxlength="60" class="w-full px-4 py-3 border rounded-lg text-sm bg-white focus:outline-none focus:ring-2" style="border-color: rgba(20,37,61,0.2); color: var(--marino)" placeholder="Café Tostadora">
+    </div>
+
+    <div>
+      <label class="block text-[10px] uppercase tracking-[0.2em] font-medium mb-2" style="color: var(--marino)">Dirección o referencia</label>
+      <input type="text" name="direccion" maxlength="100" class="w-full px-4 py-3 border rounded-lg text-sm bg-white focus:outline-none focus:ring-2" style="border-color: rgba(20,37,61,0.2); color: var(--marino)" placeholder="Sarmiento 2598 o 'a 3 cuadras del Torreón'">
+    </div>
+
+    <div>
+      <label class="block text-[10px] uppercase tracking-[0.2em] font-medium mb-2" style="color: var(--marino)">¿Por qué te gustó? *</label>
+      <textarea name="porQue" required maxlength="200" rows="3" class="w-full px-4 py-3 border rounded-lg text-sm bg-white focus:outline-none focus:ring-2 resize-none" style="border-color: rgba(20,37,61,0.2); color: var(--marino)" placeholder="Tueste local, ambiente tranquilo, atienden los dueños..."></textarea>
+      <div class="text-[10px] mt-1.5 opacity-60 text-right" style="color: var(--marino)"><span id="charCounter">0</span>/200</div>
+    </div>
+
+    <div>
+      <label class="block text-[10px] uppercase tracking-[0.2em] font-medium mb-2" style="color: var(--marino)">Foto (opcional, máx 5MB)</label>
+      <label class="block w-full px-4 py-4 border-2 border-dashed rounded-lg text-sm text-center cursor-pointer transition hover:bg-stone-100" style="border-color: rgba(20,37,61,0.25); color: var(--marino)">
+        <input type="file" name="foto" accept="image/*" class="hidden" id="fotoInput">
+        <span id="fotoLabel" class="opacity-70">📷 Seleccioná una foto</span>
+      </label>
+      <div id="fotoPreviewContainer" class="hidden mt-3">
+        <img id="fotoPreview" class="w-full h-40 object-cover rounded-lg" alt="Vista previa">
+      </div>
+    </div>
+
+    <div id="formError" class="hidden text-sm px-4 py-3 rounded-lg" style="background: rgba(184, 89, 62, 0.12); color: var(--terracota)"></div>
+
+    <button id="submitBtn" type="submit" class="btn-primary w-full inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full text-[11px] uppercase tracking-[0.25em] font-medium">
+      <span id="submitText">Enviar para revisión</span>
+      <svg id="submitSpinner" class="hidden animate-spin" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 1 1-6.22-8.56"/></svg>
+    </button>
+
+    <p class="text-[11px] opacity-60 text-center leading-relaxed" style="color: var(--marino)">Coni revisa todas las sugerencias antes de publicarlas. Si la tuya queda en la guía, te avisamos por Instagram.</p>
+  </form>
+
+  <!-- Estado de éxito -->
+  <div id="sugerirSuccess" class="hidden px-6 md:px-8 py-12 text-center">
+    <div class="w-16 h-16 mx-auto mb-5 rounded-full flex items-center justify-center" style="background: var(--marino); color: var(--crema)">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg>
+    </div>
+    <h3 class="font-display text-2xl mb-3" style="color: var(--marino)">¡Sugerencia enviada!</h3>
+    <p class="text-sm opacity-75 mb-7 max-w-sm mx-auto leading-relaxed" style="color: var(--marino)">Coni la va a revisar en las próximas horas. Si queda publicada en la guía, te etiquetamos en Instagram.</p>
+    <button id="cerrarExitoBtn" type="button" class="btn-outline inline-flex items-center gap-3 px-7 py-3 rounded-full text-[11px] uppercase tracking-[0.25em] font-medium">Cerrar</button>
+  </div>
+</div>
+```
+
+  </div>
+
+  <!-- ═══════ FIREBASE: SUGERENCIAS ═══════ -->
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import { getDatabase, ref as dbRef, push, set, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+    import { getStorage, ref as stRef, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js";
+
+    // ⚠️ TODO LEO: pegar acá la config de Firebase de Alula (Console → Project settings → SDK config)
+    const firebaseConfig = {
+      apiKey: "TU_API_KEY",
+      authDomain: "alula-hostel.firebaseapp.com",
+      databaseURL: "https://alula-hostel-default-rtdb.firebaseio.com",
+      projectId: "alula-hostel",
+      storageBucket: "alula-hostel.appspot.com",
+      messagingSenderId: "TU_SENDER_ID",
+      appId: "TU_APP_ID"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+    const storage = getStorage(app);
+
+    // ═══ Referencias DOM ═══
+    const modal = document.getElementById("sugerirModal");
+    const overlay = document.getElementById("sugerirOverlay");
+    const abrirBtn = document.getElementById("abrirSugerirModal");
+    const cerrarBtn = document.getElementById("cerrarSugerirModal");
+    const cerrarExitoBtn = document.getElementById("cerrarExitoBtn");
+    const form = document.getElementById("sugerirForm");
+    const successBox = document.getElementById("sugerirSuccess");
+    const errorBox = document.getElementById("formError");
+    const submitBtn = document.getElementById("submitBtn");
+    const submitText = document.getElementById("submitText");
+    const submitSpinner = document.getElementById("submitSpinner");
+    const fotoInput = document.getElementById("fotoInput");
+    const fotoLabel = document.getElementById("fotoLabel");
+    const fotoPreview = document.getElementById("fotoPreview");
+    const fotoPreviewContainer = document.getElementById("fotoPreviewContainer");
+    const charCounter = document.getElementById("charCounter");
+    const porQueInput = form.elements["porQue"];
+
+    // ═══ Abrir / cerrar modal ═══
+    function abrirModal() {
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+      document.body.style.overflow = "hidden";
+    }
+    function cerrarModal() {
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+      document.body.style.overflow = "";
+      form.classList.remove("hidden");
+      successBox.classList.add("hidden");
+      form.reset();
+      resetFotoPreview();
+      errorBox.classList.add("hidden");
+      charCounter.textContent = "0";
+    }
+    abrirBtn.addEventListener("click", abrirModal);
+    cerrarBtn.addEventListener("click", cerrarModal);
+    cerrarExitoBtn.addEventListener("click", cerrarModal);
+    overlay.addEventListener("click", cerrarModal);
+
+    // ═══ Char counter ═══
+    porQueInput.addEventListener("input", () => {
+      charCounter.textContent = porQueInput.value.length;
+    });
+
+    // ═══ Preview foto + compresión ═══
+    let fotoComprimida = null;
+
+    function resetFotoPreview() {
+      fotoComprimida = null;
+      fotoLabel.textContent = "📷 Seleccioná una foto";
+      fotoPreviewContainer.classList.add("hidden");
+    }
+
+    fotoInput.addEventListener("change", async (e) => {
+      const file = e.target.files[0];
+      if (!file) { resetFotoPreview(); return; }
+      if (file.size > 5 * 1024 * 1024) {
+        mostrarError("La foto pesa más de 5MB. Probá con una más liviana.");
+        fotoInput.value = "";
+        return;
+      }
+      // Comprimir a max 1200px
+      try {
+        fotoComprimida = await comprimirImagen(file, 1200, 0.85);
+        const url = URL.createObjectURL(fotoComprimida);
+        fotoPreview.src = url;
+        fotoPreviewContainer.classList.remove("hidden");
+        fotoLabel.textContent = "✓ " + file.name;
+      } catch (err) {
+        mostrarError("No pude procesar esa imagen. Probá con otra.");
+      }
+    });
+
+    function comprimirImagen(file, maxDim, quality) {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.onload = () => {
+          const canvas = document.createElement("canvas");
+          let { width, height } = img;
+          if (width > height && width > maxDim) {
+            height = Math.round(height * maxDim / width);
+            width = maxDim;
+          } else if (height > maxDim) {
+            width = Math.round(width * maxDim / height);
+            height = maxDim;
+          }
+          canvas.width = width;
+          canvas.height = height;
+          canvas.getContext("2d").drawImage(img, 0, 0, width, height);
+          canvas.toBlob(blob => blob ? resolve(blob) : reject(new Error("blob fail")), "image/jpeg", quality);
+        };
+        img.onerror = () => reject(new Error("img fail"));
+        img.src = URL.createObjectURL(file);
+      });
+    }
+
+    // ═══ Rate limit (12hs por device) ═══
+    function puedeEnviar() {
+      const last = localStorage.getItem("alula_ultima_sugerencia");
+      if (!last) return true;
+      const horas = (Date.now() - parseInt(last)) / 1000 / 60 / 60;
+      return horas >= 12;
+    }
+    function marcarEnvio() {
+      localStorage.setItem("alula_ultima_sugerencia", Date.now().toString());
+    }
+
+    function mostrarError(msg) {
+      errorBox.textContent = msg;
+      errorBox.classList.remove("hidden");
+      setTimeout(() => errorBox.scrollIntoView({ behavior: "smooth", block: "center" }), 100);
+    }
+
+    // ═══ Submit ═══
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      errorBox.classList.add("hidden");
+
+      // Honeypot: si está lleno, es bot. Falla silenciosa.
+      if (form.elements["website"].value) {
+        successBox.classList.remove("hidden");
+        form.classList.add("hidden");
+        return;
+      }
+
+      if (!puedeEnviar()) {
+        mostrarError("Ya enviaste una sugerencia hace poco. Probá de nuevo en unas horas.");
+        return;
+      }
+
+      const data = {
+        nombre: form.elements["nombre"].value.trim(),
+        instagram: form.elements["instagram"].value.trim(),
+        cuandoSeAlojo: form.elements["cuandoSeAlojo"].value.trim(),
+        categoria: form.elements["categoria"].value,
+        lugar: form.elements["lugar"].value.trim(),
+        direccion: form.elements["direccion"].value.trim(),
+        porQue: form.elements["porQue"].value.trim(),
+        fechaEnvio: serverTimestamp(),
+        estado: "pendiente"
+      };
+
+      if (!data.nombre || !data.categoria || !data.lugar || !data.porQue) {
+        mostrarError("Faltan completar campos obligatorios.");
+        return;
+      }
+
+      // UI loading
+      submitBtn.disabled = true;
+      submitText.textContent = "Enviando...";
+      submitSpinner.classList.remove("hidden");
+
+      try {
+        // 1) Crear nodo en /sugerencias_huespedes/pendientes con push()
+        const nuevaRef = push(dbRef(db, "sugerencias_huespedes/pendientes"));
+        const id = nuevaRef.key;
+
+        // 2) Si hay foto, subirla a Storage primero
+        if (fotoComprimida) {
+          const fotoRef = stRef(storage, `sugerencias/${id}.jpg`);
+          await uploadBytes(fotoRef, fotoComprimida);
+          data.fotoUrl = await getDownloadURL(fotoRef);
+        }
+
+        // 3) Guardar el nodo
+        await set(nuevaRef, data);
+
+        marcarEnvio();
+        form.classList.add("hidden");
+        successBox.classList.remove("hidden");
+      } catch (err) {
+        console.error("Error enviando sugerencia:", err);
+        mostrarError("No se pudo enviar. Probá de nuevo en un rato o escribinos por WhatsApp.");
+      } finally {
+        submitBtn.disabled = false;
+        submitText.textContent = "Enviar para revisión";
+        submitSpinner.classList.add("hidden");
+      }
+    });
+  </script>
+
   <!-- ═══════ FLOATING WHATSAPP ═══════ -->
-  <a href="https://wa.me/5492235365385?text=Hola!%20Quiero%20info%20de%20Alula%20Hostel" target="_blank" rel="noopener" class="wa-float fixed bottom-5 right-5 md:bottom-6 md:right-6 z-40 w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center" style="background: #25D366" aria-label="Chatear por WhatsApp">
+
+  <a href="https://wa.me/5492234397923?text=Hola!%20Quiero%20info%20de%20Alula%20Hostel" target="_blank" rel="noopener" class="wa-float fixed bottom-5 right-5 md:bottom-6 md:right-6 z-40 w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center" style="background: #25D366" aria-label="Chatear por WhatsApp">
     <svg width="28" height="28" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </a>
 
