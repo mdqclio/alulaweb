@@ -1,537 +1,452 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Puerto Delfín · Cabañas en Mar de las Pampas · 50m del mar</title>
-<meta name="description" content="Cabañas en Mar de las Pampas a 50 metros del mar. Bosque, silencio, pileta. Precio directo sin intermediarios. Respondemos en 1 hora.">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-:root {
-  --c: #f5f1eb; --c2: #ede7dd; --b: #fdfbf8;
-  --az: #5c7d8f; --az2: #3e5f70;
-  --t: #2c2825; --ts: #6e6660; --sep: #ddd6cc; --g: #3d5442;
-  --wsp: #25d366; --wsp2: #1da851;
-}
-html { scroll-behavior: smooth; }
-body { font-family: 'Inter', sans-serif; background: var(--b); color: var(--t); overflow-x: hidden; line-height: 1; }
-img { display: block; width: 100%; height: 100%; object-fit: cover; }
-
-/* WSP FLOAT */
-.wsp-float {
-  position: fixed; bottom: 24px; right: 24px; z-index: 999;
-  background: var(--wsp); color: #fff; border-radius: 50px;
-  padding: 14px 20px; display: flex; align-items: center; gap: 10px;
-  font-size: 13px; font-weight: 600; text-decoration: none;
-  box-shadow: 0 6px 28px rgba(37,211,102,0.45);
-  animation: pulse 2.5s infinite;
-}
-.wsp-float:hover { background: var(--wsp2); transform: translateY(-2px); }
-@keyframes pulse { 0%,100%{box-shadow:0 6px 28px rgba(37,211,102,0.45)} 50%{box-shadow:0 6px 40px rgba(37,211,102,0.65)} }
-.wsp-float svg { width: 20px; height: 20px; flex-shrink: 0; }
-
-/* NAV */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  padding: 22px 48px; display: flex; justify-content: space-between; align-items: center;
-  transition: all 0.4s;
-}
-nav.solid { background: rgba(253,251,248,0.97); padding: 14px 48px; border-bottom: 1px solid var(--sep); backdrop-filter: blur(10px); }
-.nav-brand { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 400; color: #fff; letter-spacing: 1.5px; text-decoration: none; transition: color 0.4s; }
-.nav-brand small { display: block; font-family: 'Inter', sans-serif; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; opacity: 0.6; margin-top: 2px; font-weight: 300; }
-nav.solid .nav-brand { color: var(--az2); }
-.nav-links { display: flex; gap: 32px; list-style: none; align-items: center; }
-.nav-links a { color: rgba(255,255,255,0.78); text-decoration: none; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 400; transition: color 0.2s; }
-nav.solid .nav-links a { color: var(--ts); }
-.nav-links a:hover { color: var(--az) !important; }
-.nav-wsp { background: var(--wsp) !important; color: #fff !important; padding: 9px 20px; border-radius: 2px; font-weight: 500 !important; }
-.nav-wsp:hover { background: var(--wsp2) !important; }
-
-/* HERO */
-.hero { height: 100vh; min-height: 660px; position: relative; display: flex; align-items: flex-end; overflow: hidden; }
-.hero-bg {
-  position: absolute; inset: 0;
-  background: url('foto4.jpg') center 30%/cover;
-  transform: scale(1.05); animation: zoom 16s ease-out forwards;
-}
-.hero-bg::after {
-  content: ''; position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(20,16,12,0.82) 0%, rgba(20,16,12,0.25) 55%, rgba(20,16,12,0.08) 100%);
-}
-@keyframes zoom { from{transform:scale(1.05)} to{transform:scale(1)} }
-.hero-body { position: relative; z-index: 2; padding: 0 64px 72px; max-width: 700px; animation: up 1.2s ease 0.4s both; }
-@keyframes up { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:none} }
-.hero-tag { font-size: 10px; letter-spacing: 5px; text-transform: uppercase; color: rgba(255,255,255,0.58); font-weight: 300; margin-bottom: 18px; display: flex; align-items: center; gap: 12px; }
-.hero-tag::before { content:''; display:inline-block; width:28px; height:1px; background:rgba(255,255,255,0.4); }
-.hero-h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(46px, 6.8vw, 84px); font-weight: 300; line-height: 1.04; color: #fff; margin-bottom: 16px; }
-.hero-h1 em { font-style: italic; }
-.hero-price { font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.65); margin-bottom: 28px; letter-spacing: 0.5px; }
-.hero-price strong { color: rgba(255,255,255,0.9); font-weight: 500; font-size: 16px; }
-.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
-.btn-wsp { background: var(--wsp); color: #fff; padding: 16px 34px; font-size: 13px; font-weight: 600; letter-spacing: 0.5px; text-decoration: none; border-radius: 2px; display: flex; align-items: center; gap: 9px; transition: all 0.25s; }
-.btn-wsp:hover { background: var(--wsp2); transform: translateY(-2px); }
-.btn-wsp svg { width: 18px; height: 18px; flex-shrink: 0; }
-.btn-sec { border: 1px solid rgba(255,255,255,0.4); color: rgba(255,255,255,0.85); padding: 16px 28px; font-size: 12px; font-weight: 300; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: all 0.25s; }
-.btn-sec:hover { border-color: #fff; color: #fff; }
-.hero-trust { margin-top: 24px; font-size: 11px; color: rgba(255,255,255,0.45); letter-spacing: 0.5px; }
-.hero-trust span { color: rgba(255,255,255,0.65); }
-
-/* STRIP */
-.strip { background: var(--g); padding: 20px 48px; text-align: center; }
-.strip p { font-family: 'Cormorant Garamond', serif; font-size: clamp(14px,1.8vw,20px); font-weight: 300; font-style: italic; color: rgba(255,255,255,0.88); }
-.strip span { color: rgba(255,255,255,0.35); margin: 0 14px; }
-
-/* NÚMEROS */
-.nums { display: flex; justify-content: center; background: var(--c2); border-bottom: 1px solid var(--sep); }
-.num-item { text-align: center; padding: 28px 52px; border-right: 1px solid var(--sep); }
-.num-item:last-child { border-right: none; }
-.num-item b { font-family: 'Cormorant Garamond', serif; font-size: 34px; font-weight: 300; color: var(--az); display: block; line-height: 1; }
-.num-item span { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--ts); font-weight: 300; margin-top: 6px; display: block; }
-
-/* LABEL + H2 */
-.lbl { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--az); font-weight: 400; margin-bottom: 14px; display: block; }
-.h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(30px,3.5vw,48px); font-weight: 300; color: var(--t); line-height: 1.15; }
-.h2 em { font-style: italic; color: var(--az); }
-
-/* CABAÑAS - SECCIÓN CLAVE */
-.cabanas { background: var(--b); padding: 88px 56px; }
-.cab-header { text-align: center; margin-bottom: 64px; }
-.cab-header .h2 { max-width: 100%; }
-.cab-sub { font-size: 14px; font-weight: 300; color: var(--ts); margin-top: 14px; }
-.cab-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; max-width: 1160px; margin: 0 auto; background: var(--sep); }
-.cab-card { background: var(--b); display: flex; flex-direction: column; transition: box-shadow 0.3s; }
-.cab-card:hover { box-shadow: 0 16px 48px rgba(92,125,143,0.14); z-index: 2; position: relative; }
-.cab-img { height: 260px; overflow: hidden; position: relative; }
-.cab-img img { filter: brightness(0.93) saturate(0.88); transition: transform 0.5s, filter 0.5s; }
-.cab-card:hover .cab-img img { transform: scale(1.04); filter: brightness(1) saturate(1); }
-.cab-tag { position: absolute; top: 16px; left: 16px; background: #fff; color: var(--az); font-size: 9px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; padding: 5px 12px; }
-.cab-body { padding: 28px 28px 32px; flex: 1; display: flex; flex-direction: column; }
-.cab-name { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 300; color: var(--t); margin-bottom: 8px; }
-.cab-desc { font-size: 13px; font-weight: 300; color: var(--ts); line-height: 1.75; margin-bottom: 18px; flex: 1; }
-.cab-specs { display: flex; gap: 14px; flex-wrap: wrap; padding: 16px 0; border-top: 1px solid var(--sep); border-bottom: 1px solid var(--sep); margin-bottom: 20px; }
-.cab-spec { font-size: 11px; color: var(--ts); font-weight: 300; }
-.cab-price { font-size: 13px; color: var(--ts); margin-bottom: 16px; }
-.cab-price strong { font-size: 18px; color: var(--t); font-weight: 500; }
-.cab-cta {
-  background: var(--g); color: #fff; padding: 13px 20px;
-  font-size: 12px; font-weight: 500; letter-spacing: 0.5px; text-align: center;
-  text-decoration: none; border-radius: 2px; transition: all 0.25s;
-  display: flex; align-items: center; justify-content: center; gap: 8px;
-}
-.cab-cta:hover { background: #2d3f31; }
-.cab-cta svg { width: 15px; height: 15px; }
-
-/* MID CTA */
-.mid-cta { background: var(--az2); text-align: center; padding: 52px 48px; }
-.mid-cta p { font-family: 'Cormorant Garamond', serif; font-size: clamp(18px,2.5vw,28px); font-weight: 300; font-style: italic; color: rgba(255,255,255,0.88); margin-bottom: 24px; }
-.mid-cta a { display: inline-flex; align-items: center; gap: 10px; background: var(--wsp); color: #fff; padding: 15px 36px; font-size: 13px; font-weight: 600; text-decoration: none; border-radius: 2px; transition: all 0.25s; }
-.mid-cta a:hover { background: var(--wsp2); transform: translateY(-2px); }
-.mid-cta a svg { width: 18px; }
-.mid-cta small { display: block; margin-top: 12px; font-size: 11px; color: rgba(255,255,255,0.45); letter-spacing: 0.5px; }
-
-/* EXPERIENCIA */
-.experiencia { display: grid; grid-template-columns: 1fr 1fr; min-height: 580px; }
-.exp-img { overflow: hidden; }
-.exp-img img { filter: brightness(0.9) saturate(0.85); transition: transform 0.7s; }
-.exp-img:hover img { transform: scale(1.04); }
-.exp-text { background: var(--c2); padding: 72px 64px; display: flex; flex-direction: column; justify-content: center; }
-.exp-quote { font-family: 'Cormorant Garamond', serif; font-size: clamp(19px,2.2vw,27px); font-weight: 300; font-style: italic; color: var(--t); line-height: 1.6; margin: 20px 0 32px; border-left: 2px solid var(--az); padding-left: 20px; }
-.exp-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
-.exp-list li { display: flex; gap: 14px; align-items: flex-start; font-size: 13px; font-weight: 300; color: var(--ts); line-height: 1.65; padding-bottom: 16px; border-bottom: 1px solid var(--sep); }
-.exp-list li:last-child { border: none; padding: 0; }
-.exp-list li strong { color: var(--t); font-weight: 500; }
-.exp-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--az); flex-shrink: 0; margin-top: 7px; }
-
-/* GALERÍA */
-.galeria { padding: 72px 56px; background: var(--c); }
-.gal-top { text-align: center; margin-bottom: 40px; }
-.gal-grid {
-  display: grid; max-width: 1160px; margin: 0 auto;
-  grid-template-columns: repeat(12,1fr); grid-template-rows: 255px 255px; gap: 4px;
-}
-.gi { overflow: hidden; cursor: pointer; }
-.gi img { filter: brightness(0.91) saturate(0.82); transition: transform 0.5s, filter 0.5s; }
-.gi:hover img { transform: scale(1.06); filter: brightness(1) saturate(1); }
-.gi:nth-child(1){grid-column:1/6;grid-row:1/3;}
-.gi:nth-child(2){grid-column:6/9;grid-row:1/2;}
-.gi:nth-child(3){grid-column:9/13;grid-row:1/2;}
-.gi:nth-child(4){grid-column:6/10;grid-row:2/3;}
-.gi:nth-child(5){grid-column:10/13;grid-row:2/3;}
-.gal-cta-wrap { text-align: center; margin-top: 28px; }
-.gal-note { font-size: 11px; color: var(--ts); margin-bottom: 16px; }
-.btn-outline { border: 1px solid var(--az); color: var(--az); padding: 12px 28px; font-size: 11px; font-weight: 400; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border-radius: 2px; display: inline-block; transition: all 0.25s; }
-.btn-outline:hover { background: var(--az); color: #fff; }
-
-/* REVIEWS */
-.reviews-sec { background: var(--b); padding: 88px 56px; }
-.rev-top { text-align: center; margin-bottom: 56px; }
-.rev-kpi { display: flex; justify-content: center; gap: 0; margin-bottom: 52px; background: var(--c2); border: 1px solid var(--sep); max-width: 700px; margin-left: auto; margin-right: auto; }
-.kpi { text-align: center; padding: 22px 36px; border-right: 1px solid var(--sep); flex: 1; }
-.kpi:last-child { border: none; }
-.kpi b { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 300; color: var(--az); display: block; }
-.kpi span { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ts); }
-.rev-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; max-width: 1100px; margin: 0 auto 48px; }
-.rev-card { background: var(--c); padding: 32px; border-top: 2px solid var(--az); }
-.rev-stars { color: #f0a500; font-size: 13px; letter-spacing: 2px; margin-bottom: 14px; }
-.rev-text { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-weight: 300; font-style: italic; color: var(--t); line-height: 1.65; margin-bottom: 18px; }
-.rev-who { font-size: 11px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: var(--t); }
-.rev-meta { font-size: 10px; color: var(--az); margin-top: 3px; letter-spacing: 0.5px; }
-.rev-cta { text-align: center; }
-.rev-cta a { display: inline-flex; align-items: center; gap: 10px; background: var(--wsp); color: #fff; padding: 16px 40px; font-size: 13px; font-weight: 600; text-decoration: none; border-radius: 2px; transition: all 0.25s; }
-.rev-cta a:hover { background: var(--wsp2); transform: translateY(-2px); }
-.rev-cta small { display: block; margin-top: 12px; font-size: 11px; color: var(--ts); }
-
-/* UBICACIÓN */
-.ubicacion { display: grid; grid-template-columns: 1fr 1fr; min-height: 500px; }
-.ubic-left { background: var(--g); padding: 72px 64px; display: flex; flex-direction: column; justify-content: center; }
-.ubic-left .lbl { color: rgba(255,255,255,0.5); }
-.ubic-h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(26px,3vw,40px); font-weight: 300; color: #fff; line-height: 1.2; margin: 14px 0 20px; }
-.ubic-h2 em { font-style: italic; }
-.ubic-intro { font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.65); line-height: 1.8; margin-bottom: 32px; }
-.ubic-rows { display: flex; flex-direction: column; gap: 0; border-top: 1px solid rgba(255,255,255,0.12); }
-.ubic-row { display: flex; gap: 14px; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.1); align-items: flex-start; }
-.ubic-icon { font-size: 14px; opacity: 0.55; flex-shrink: 0; margin-top: 1px; }
-.ubic-row p { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.58); line-height: 1.55; }
-.ubic-row strong { color: rgba(255,255,255,0.88); font-weight: 400; display: block; }
-.ubic-map iframe { width: 100%; height: 100%; min-height: 500px; border: none; filter: saturate(0.5) brightness(0.9); display: block; }
-
-/* CTA FINAL */
-.cta-final { background: var(--c2); text-align: center; padding: 108px 48px; position: relative; overflow: hidden; }
-.cta-final::before { content: 'PUERTO DELFÍN'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-family: 'Cormorant Garamond', serif; font-size: clamp(48px,10vw,140px); font-weight: 300; color: var(--sep); opacity: 0.45; white-space: nowrap; pointer-events: none; letter-spacing: 6px; }
-.cta-inner { position: relative; z-index: 2; }
-.cta-tag { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--az); font-weight: 400; margin-bottom: 18px; display: block; }
-.cta-h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(34px,5vw,60px); font-weight: 300; color: var(--t); line-height: 1.1; margin-bottom: 18px; }
-.cta-h2 em { font-style: italic; color: var(--az); }
-.cta-sub { font-size: 14px; font-weight: 300; color: var(--ts); max-width: 420px; margin: 0 auto 40px; line-height: 1.8; }
-.cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px; }
-.btn-wsp-xl { background: var(--g); color: #fff; padding: 18px 44px; font-size: 14px; font-weight: 600; letter-spacing: 0.3px; text-decoration: none; border-radius: 2px; display: flex; align-items: center; gap: 12px; transition: all 0.3s; box-shadow: 0 8px 28px rgba(61,84,66,0.28); }
-.btn-wsp-xl:hover { background: #2d3f31; transform: translateY(-3px); box-shadow: 0 14px 40px rgba(61,84,66,0.38); }
-.btn-tel { border: 1px solid var(--sep); color: var(--ts); padding: 18px 32px; font-size: 12px; font-weight: 400; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; border-radius: 2px; display: flex; align-items: center; gap: 10px; transition: all 0.25s; }
-.btn-tel:hover { border-color: var(--t); color: var(--t); }
-.cta-microcopy { font-size: 11px; color: var(--ts); letter-spacing: 0.5px; }
-.cta-microcopy span { color: var(--az); font-weight: 500; }
-
-/* FOOTER */
-footer { background: var(--t); padding: 40px 56px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
-.foot-brand { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 300; color: rgba(255,255,255,0.5); letter-spacing: 2px; }
-.foot-brand small { display: block; font-family: 'Inter',sans-serif; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; margin-top: 3px; opacity: 0.3; }
-.foot-links { display: flex; gap: 24px; }
-.foot-links a { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.22); text-decoration: none; transition: color 0.2s; }
-.foot-links a:hover { color: rgba(255,255,255,0.55); }
-.foot-copy { font-size: 10px; color: rgba(255,255,255,0.18); font-weight: 300; }
-
-/* REVEAL */
-.r { opacity: 0; transform: translateY(22px); transition: opacity 0.85s ease, transform 0.85s ease; }
-.r.on { opacity: 1; transform: none; }
-.d1{transition-delay:.1s} .d2{transition-delay:.2s} .d3{transition-delay:.3s}
-
-/* MOBILE */
-@media(max-width:900px){
-  nav{padding:16px 20px;} nav.solid{padding:12px 20px;}
-  .nav-links{display:none;}
-  .hero-body{padding:0 24px 56px;}
-  .nums{flex-wrap:wrap;}
-  .num-item{flex:1 1 50%;border-right:none;border-bottom:1px solid var(--sep);}
-  .cabanas,.reviews-sec,.galeria{padding:64px 20px;}
-  .cab-grid{grid-template-columns:1fr;}
-  .experiencia{grid-template-columns:1fr;}
-  .exp-img{height:280px;}
-  .exp-text{padding:48px 24px;}
-  .gal-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto;}
-  .gi:nth-child(1){grid-column:1/3;grid-row:1/2;height:240px;}
-  .gi:nth-child(n){height:180px;}
-  .rev-kpi{flex-wrap:wrap;} .kpi{flex:1 1 50%;border-bottom:1px solid var(--sep);}
-  .rev-grid{grid-template-columns:1fr;}
-  .ubicacion{grid-template-columns:1fr;}
-  .ubic-left{padding:52px 24px;}
-  .cta-final{padding:80px 20px;}
-  footer{flex-direction:column;text-align:center;padding:32px 20px;}
-  .foot-links{flex-wrap:wrap;justify-content:center;}
-  .wsp-float{bottom:16px;right:16px;}
-}
-</style>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2022.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+    span.s1 {font: 12.0px 'PingFang SC'}
+  </style>
 </head>
 <body>
-
-<!-- WSP FLOTANTE -->
-<a href="https://api.whatsapp.com/send?phone=5492235365385&text=Hola!%20Vi%20la%20web%20de%20Puerto%20Delf%C3%ADn%20y%20quiero%20ver%20disponibilidad." class="wsp-float" target="_blank" aria-label="WhatsApp">
-  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-  Reservar ahora
-</a>
-
-<!-- NAV -->
-<nav id="nav">
-  <a href="#inicio" class="nav-brand">puerto delfín<small>mar de las pampas</small></a>
-  <ul class="nav-links">
-    <li><a href="#cabanas">Cabañas</a></li>
-    <li><a href="#galeria">Galería</a></li>
-    <li><a href="#opiniones">Opiniones</a></li>
-    <li><a href="#ubicacion">Ubicación</a></li>
-    <li><a href="https://api.whatsapp.com/send?phone=5492235365385&text=Hola!%20Quiero%20reservar." target="_blank" class="nav-wsp">Reservar</a></li>
-  </ul>
-</nav>
-
-<!-- ① HERO -->
-<section class="hero" id="inicio">
-  <div class="hero-bg"></div>
-  <div class="hero-body">
-    <span class="hero-tag">Mar de las Pampas · A 50m del mar · Abierto todo el año</span>
-    <h1 class="hero-h1">El lujo de<br><em>no hacer nada.</em></h1>
-    <p class="hero-price">Cabañas desde <strong>consultá precio directo</strong> · sin intermediarios · sin recargo</p>
-    <div class="hero-actions">
-      <a href="https://api.whatsapp.com/send?phone=5492235365385&text=Hola!%20Vi%20la%20web%20y%20quisiera%20saber%20disponibilidad%20y%20precios%20para%20mis%20fechas." class="btn-wsp" target="_blank">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Ver disponibilidad y precios
-      </a>
-      <a href="#cabanas" class="btn-sec">Conocer las cabañas</a>
-    </div>
-    <p class="hero-trust"><span>✓</span> Respondemos en menos de 1h · <span>✓</span> Sin cargo por consultar · <span>✓</span> Precio directo sin Booking</p>
-  </div>
-</section>
-
-<!-- STRIP -->
-<div class="strip">
-  <p>bosque · mar · silencio <span>·</span> el único lujo que te falta es tiempo libre <span>·</span> nosotros te lo damos</p>
-</div>
-
-<!-- NÚMEROS -->
-<div class="nums">
-  <div class="num-item r"><b>50m</b><span>de la playa</span></div>
-  <div class="num-item r d1"><b>+500</b><span>familias hospedadas</span></div>
-  <div class="num-item r d2"><b>9.2</b><span>puntaje Booking</span></div>
-  <div class="num-item r d3"><b>365</b><span>días al año</span></div>
-</div>
-
-<!-- ② CABAÑAS CON PRECIO -->
-<section class="cabanas" id="cabanas">
-  <div class="cab-header r">
-    <span class="lbl">elegí tu cabaña</span>
-    <h2 class="h2">No es una cabaña.<br>Es un <em>permiso.</em></h2>
-    <p class="cab-sub">El permiso de apagar el teléfono, dormir hasta tarde y no tener nada pendiente.</p>
-  </div>
-  <div class="cab-grid">
-
-    <div class="cab-card r">
-      <div class="cab-img">
-        <img src="foto1.jpg" alt="Monoambiente Puerto Delfín">
-        <span class="cab-tag">2 – 3 personas</span>
-      </div>
-      <div class="cab-body">
-        <h3 class="cab-name">Monoambiente</h3>
-        <p class="cab-desc">38 m² de confort total. Cocina equipada, hogar a leños, baño con bañera y deck privado con parrilla. Para una pareja que quiere estar en su mundo.</p>
-        <div class="cab-specs">
-          <span class="cab-spec">🏠 38 m²</span>
-          <span class="cab-spec">👥 2-3 personas</span>
-          <span class="cab-spec">🔥 Hogar a leños</span>
-          <span class="cab-spec">🍖 Parrilla propia</span>
-        </div>
-        <p class="cab-price">Precio: <strong>consultá por WhatsApp</strong></p>
-        <a href="https://api.whatsapp.com/send?phone=5492235365385&text=Hola!%20Me%20interesa%20el%20Monoambiente%20de%20Puerto%20Delf%C3%ADn.%20%C2%BFTienen%20disponibilidad%20y%20cu%C3%A1l%20es%20el%20precio?" class="cab-cta" target="_blank">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Quiero este monoambiente
-        </a>
-      </div>
-    </div>
-
-    <div class="cab-card r d1">
-      <div class="cab-img">
-        <img src="foto4.jpg" alt="Dos ambientes Puerto Delfín">
-        <span class="cab-tag">Hasta 4 personas</span>
-      </div>
-      <div class="cab-body">
-        <h3 class="cab-name">Dos Ambientes</h3>
-        <p class="cab-desc">38 m² con habitación independiente en planta baja. Dos televisores, calefacción central. La opción ideal para familia o dos parejas con privacidad.</p>
-        <div class="cab-specs">
-          <span class="cab-spec">🏠 38 m²</span>
-          <span class="cab-spec">👥 hasta 4</span>
-          <span class="cab-spec">🐾 Pet friendly</span>
-          <span class="cab-spec">📺 2 TV</span>
-        </div>
-        <p class="cab-price">Precio: <strong>consultá por WhatsApp</strong></p>
-        <a href="https://api.whatsapp.com/send?phone=5492235365385&text=Hola!%20Me%20interesa%20la%20Caba%C3%B1a%20de%20Dos%20Ambientes.%20%C2%BFTienen%20disponibilidad%20y%20cu%C3%A1l%20es%20el%20precio?" class="cab-cta" target="_blank">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Quiero esta cabaña
-        </a>
-      </div>
-    </div>
-
-    <div class="cab-card r d2">
-      <div class="cab-img">
-        <img src="foto7.jpg" alt="Loft Puerto Delfín">
-        <span class="cab-tag">Hasta 6 personas</span>
-      </div>
-      <div class="cab-body">
-        <h3 class="cab-name">Loft</h3>
-        <p class="cab-desc">53 m² en primer piso con doble altura y luz natural. El espacio más amplio del complejo. Para grupos o familias que quieren lo mejor sin resignar nada.</p>
-        <div class="cab-specs">
-          <span class="cab-spec">🏠 53 m²</span>
-          <span class="cab-spec">👥 hasta 6</span>
-          <span class="cab-spec">☀️ Deck amplio</span>
-          <span class="cab-spec">🌳 1er piso</span>
-        </div>
-        <p class="cab-price">Precio: <strong>consultá por WhatsApp</strong></p>
-        <a href="https://api.whatsapp.com/send?phone=5492235365385&text=Hola!%20Me%20interesa%20el%20Loft%20de%20Puerto%20Delf%C3%ADn.%20%C2%BFTienen%20disponibilidad%20y%20cu%C3%A1l%20es%20el%20precio?" class="cab-cta" target="_blank">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Quiero el loft
-        </a>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- MID CTA - captura intención racional post-cabañas -->
-<div class="mid-cta">
-  <p>"¿No sabés cuál elegir? Contanos cuántos son y te recomendamos la mejor opción."</p>
-  <a href="https://api.whatsapp.com/send?phone=5492235365385&text=Hola!%20No%20s%C3%A9%20qu%C3%A9%20caba%C3%B1a%20elegir.%20%C2%BFPueden%20ayudarme?" target="_blank">
-    <svg viewBox="0 0 24 24" fill="currentColor" width="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    Ayudame a elegir
-  </a>
-  <small>Sin compromiso · Respondemos en menos de 1 hora</small>
-</div>
-
-<!-- ③ EXPERIENCIA -->
-<div class="experiencia">
-  <div class="exp-img r"><img src="foto2.jpg" alt="Parque Puerto Delfín"></div>
-  <div class="exp-text">
-    <span class="lbl r">la experiencia</span>
-    <h2 class="h2 r">Llegás agotado.<br>Te vas <em>distinto.</em></h2>
-    <blockquote class="exp-quote r">"Tres noches aquí hacen lo que no pudieron hacer tres meses de rutina."</blockquote>
-    <ul class="exp-list">
-      <li class="r"><div class="exp-dot"></div><div><strong>Mañanas sin alarma</strong> — desayuno en la puerta, vos decidís cuándo empezar el día</div></li>
-      <li class="r d1"><div class="exp-dot"></div><div><strong>Pileta templada con deck de madera</strong> — rodeada de verde, lejos de todo el ruido</div></li>
-      <li class="r d2"><div class="exp-dot"></div><div><strong>Noches con fuego y parrilla propia</strong> — hogar a leños, cielo sin contaminación lumínica</div></li>
-      <li class="r d3"><div class="exp-dot"></div><div><strong>50m de playa tranquila</strong> — de las pocas de la costa sin masificación ni ruido</div></li>
-    </ul>
-  </div>
-</div>
-
-<!-- ④ GALERÍA -->
-<section class="galeria" id="galeria">
-  <div class="gal-top r">
-    <span class="lbl">galería</span>
-    <h2 class="h2">Mejor que las fotos<br>es estar <em>acá.</em></h2>
-    <p class="gal-note" style="margin-top:12px;">Fotos reales del complejo. Sin producción, sin filtros.</p>
-  </div>
-  <div class="gal-grid r">
-    <div class="gi"><img src="foto4.jpg" alt="Pileta y cabaña"></div>
-    <div class="gi"><img src="foto1.jpg" alt="Exterior"></div>
-    <div class="gi"><img src="foto6.jpg" alt="Parque"></div>
-    <div class="gi"><img src="foto3.jpg" alt="Recepción"></div>
-    <div class="gi"><img src="foto5.jpg" alt="Jardín"></div>
-  </div>
-  <div class="gal-cta-wrap r">
-    <p class="gal-note">📅 Consultá disponibilidad para tus fechas — hay lugares limitados</p>
-    <a href="https://api.whatsapp.com/send?phone=5492235365385&text=Hola!%20Vi%20las%20fotos%20y%20me%20interesa%20reservar.%20%C2%BFTienen%20disponibilidad?" class="btn-outline" target="_blank">Ver fechas disponibles</a>
-  </div>
-</section>
-
-<!-- ⑤ REVIEWS -->
-<section class="reviews-sec" id="opiniones">
-  <div class="rev-top r">
-    <span class="lbl">+500 familias ya descansaron acá</span>
-    <h2 class="h2">Ellos ya <em>desconectaron.</em><br>¿Vos cuándo?</h2>
-  </div>
-  <div class="rev-kpi r">
-    <div class="kpi"><b>9.2</b><span>Booking</span></div>
-    <div class="kpi"><b>4.9★</b><span>Google</span></div>
-    <div class="kpi"><b>4.8★</b><span>Airbnb</span></div>
-    <div class="kpi"><b>#1</b><span>zona bosque</span></div>
-  </div>
-  <div class="rev-grid">
-    <div class="rev-card r">
-      <div class="rev-stars">★★★★★</div>
-      <p class="rev-text">"Llegamos una pareja completamente quemada. Tres noches de bosque, pileta y silencio hicieron lo que no pudo el psicólogo en meses. Ya tenemos fecha para volver."</p>
-      <div class="rev-who">Valentina G. — Monoambiente, 3 noches</div>
-      <div class="rev-meta">Buenos Aires · Booking.com · Enero 2025</div>
-    </div>
-    <div class="rev-card r d1">
-      <div class="rev-stars">★★★★★</div>
-      <p class="rev-text">"Fuimos con los chicos y el perro y los tres volvieron distintos. El parque es enorme, la atención impecable y la ubicación es imposible de superar en toda la zona."</p>
-      <div class="rev-who">Martín S. — Dos ambientes, 4 noches</div>
-      <div class="rev-meta">Córdoba · Google Reviews · Febrero 2025</div>
-    </div>
-    <div class="rev-card r d2">
-      <div class="rev-stars">★★★★★</div>
-      <p class="rev-text">"El último día me quedé sentada en el deck mirando el bosque sin hacer nada. Eso no tiene precio. Voy a recomendar este lugar por el resto de mi vida."</p>
-      <div class="rev-who">Luciana M. — Loft, 5 noches</div>
-      <div class="rev-meta">Rosario · Airbnb · Diciembre 2024</div>
-    </div>
-  </div>
-  <div class="rev-cta r">
-    <a href="https://api.whatsapp.com/send?phone=5492235365385&text=Hola!%20Le%C3%AD%20las%20opiniones%20y%20quiero%20reservar.%20%C2%BFTienen%20disponibilidad?" target="_blank">
-      <svg viewBox="0 0 24 24" fill="currentColor" width="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      Quiero reservar mi estadía
-    </a>
-    <small>Sin cargo por consultar · Respondemos en menos de 1 hora</small>
-  </div>
-</section>
-
-<!-- ⑥ UBICACIÓN -->
-<div class="ubicacion" id="ubicacion">
-  <div class="ubic-left">
-    <span class="lbl">ubicación</span>
-    <h2 class="ubic-h2">En el corazón del bosque.<br><em>A pasos del mar.</em></h2>
-    <p class="ubic-intro">Mar de las Pampas es el destino más exclusivo de la costa atlántica argentina. Sin ruido, sin multitudes. Nosotros estamos justo en el centro.</p>
-    <div class="ubic-rows">
-      <div class="ubic-row r"><span class="ubic-icon">📍</span><p><strong>Delfín 18 esq. Alfonsina Storni</strong>Mar de las Pampas, Buenos Aires</p></div>
-      <div class="ubic-row r"><span class="ubic-icon">🌊</span><p><strong>50 metros de la playa</strong>Caminás y llegás — sin auto, sin transporte</p></div>
-      <div class="ubic-row r"><span class="ubic-icon">🏪</span><p><strong>300m del centro</strong>Restaurantes, tiendas, gastronomía local</p></div>
-      <div class="ubic-row r"><span class="ubic-icon">🚗</span><p><strong>400 km desde CABA</strong>Ruta 2 o Ruta 11 · Bus directo disponible</p></div>
-    </div>
-  </div>
-  <div class="ubic-map">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3141.8!2d-57.0239712!3d-37.3314904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959b5c2d52a1b1a5%3A0x8aa14c4ea5199bba!2sPuerto+Delf%C3%ADn%2C+Mar+de+las+Pampas!5e0!3m2!1ses-419!2sar!4v1711580000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-  </div>
-</div>
-
-<!-- ⑦ CTA FINAL -->
-<section class="cta-final">
-  <div class="cta-inner">
-    <span class="cta-tag r">reservá directo · sin intermediarios · precio más bajo</span>
-    <h2 class="cta-h2 r">Hay fechas disponibles<br>ahora mismo. <em>¿Las tomás?</em></h2>
-    <p class="cta-sub r">Escribinos por WhatsApp. En menos de una hora tenés fechas, precios y disponibilidad. Sin formularios, sin esperas.</p>
-    <div class="cta-btns r">
-      <a href="https://api.whatsapp.com/send?phone=5492235365385&text=Hola!%20Quiero%20reservar%20en%20Puerto%20Delf%C3%ADn.%20%C2%BFTienen%20disponibilidad%20para%20mis%20fechas?" class="btn-wsp-xl" target="_blank">
-        <svg viewBox="0 0 24 24" fill="currentColor" width="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Consultar disponibilidad ahora
-      </a>
-      <a href="tel:+5492235365385" class="btn-tel">
-        <svg width="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.07 6.07l1.27-.53a2 2 0 012.11.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-        Llamar directo
-      </a>
-    </div>
-    <p class="cta-microcopy r"><span>✓</span> Respondemos en menos de 1h · <span>✓</span> Sin cargo por consultar · <span>✓</span> Precio más bajo garantizado reservando directo</p>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="foot-brand">puerto delfín<small>mar de las pampas · buenos aires</small></div>
-  <nav class="foot-links">
-    <a href="#cabanas">Cabañas</a>
-    <a href="#galeria">Galería</a>
-    <a href="#opiniones">Opiniones</a>
-    <a href="#ubicacion">Ubicación</a>
-    <a href="mailto:info@puertodelfin.com">Email</a>
-  </nav>
-  <p class="foot-copy">© 2025 Puerto Delfín · Todos los derechos reservados</p>
-</footer>
-
-<script>
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => nav.classList.toggle('solid', window.scrollY > 60));
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      const t = document.querySelector(a.getAttribute('href'));
-      if (t) { e.preventDefault(); window.scrollTo({ top: t.getBoundingClientRect().top + scrollY - 76, behavior: 'smooth' }); }
-    });
-  });
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); } });
-  }, { threshold: 0, rootMargin: '0px 0px -55px 0px' });
-  document.querySelectorAll('.r').forEach(el => obs.observe(el));
-</script>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="es"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;Alula Hostel — Dormí en la historia de Mar del Plata&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="description" content="Hostel boutique en una joya arquitectónica de 1932 frente al mar, en la Loma de Santa Cecilia, Mar del Plata. Diseñado por Alula Baldassarini." /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&amp;family=DM+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>:root {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--crema: #F2EADC;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--crema-claro: #FAF5EB;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--piedra: #E5DAC4;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--marino: #14253D;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--marino-claro: #1F3552;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--madera: #C9A878;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--madera-claro: #DDC196;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--terracota: #B8593E;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--tinta: #1A1A1A;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>html { scroll-behavior: smooth; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: 'DM Sans', system-ui, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--crema);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--tinta);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>-webkit-font-smoothing: antialiased;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.font-display {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: 'Fraunces', serif;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-optical-sizing: auto;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero-image {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background-image: linear-gradient(180deg, rgba(20, 37, 61, 0.4) 0%, rgba(20, 37, 61, 0.55) 55%, rgba(242, 234, 220, 0.95) 100%), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=2400&amp;q=80');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background-size: cover;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background-position: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.nav-blur {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>backdrop-filter: blur(14px);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>-webkit-backdrop-filter: blur(14px);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(242, 234, 220, 0.78);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.btn-primary {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--marino);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--crema);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transition: all 0.3s ease;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.btn-primary:hover {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--marino-claro);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transform: translateY(-2px);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 14px 30px -12px rgba(20,37,61,0.55);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.btn-outline {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid var(--marino);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--marino);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transition: all 0.3s ease;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.btn-outline:hover {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--marino);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--crema);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.divider-line {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>height: 1px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: linear-gradient(90deg, transparent, rgba(20,37,61,0.3) 30%, rgba(20,37,61,0.3) 70%, transparent);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.vertical-text {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>writing-mode: vertical-rl;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transform: rotate(180deg);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: 0.4em;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.service-card {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transition: all 0.4s ease;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.service-card:hover {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transform: translateY(-4px);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--crema-claro);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.reveal {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>opacity: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transform: translateY(24px);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>animation: reveal 1.1s cubic-bezier(.2,.7,.2,1) forwards;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>@keyframes reveal { to { opacity: 1; transform: translateY(0); } }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.delay-1 { animation-delay: 0.15s; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.delay-2 { animation-delay: 0.3s; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.delay-3 { animation-delay: 0.45s; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.wa-float {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>animation: wapulse 2.6s ease-in-out infinite;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>@keyframes wapulse {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>0%, 100% { box-shadow: 0 8px 24px -4px rgba(37, 211, 102, 0.5); }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>50%<span class="Apple-converted-space">      </span>{ box-shadow: 0 10px 36px 2px rgba(37, 211, 102, 0.75); }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero-title em {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-style: italic;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 400;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.map-frame {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>filter: sepia(18%) saturate(0.8) hue-rotate(-8deg) contrast(0.95);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body class="overflow-x-hidden"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- <span class="s1">═══════</span> NAV <span class="s1">═══════</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;nav class="fixed top-0 left-0 right-0 z-50 nav-blur border-b border-stone-300/40"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="max-w-7xl mx-auto px-5 md:px-10 py-4 flex items-center justify-between"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="#" class="flex items-baseline gap-2.5"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="font-display text-2xl tracking-tight" style="color: var(--marino)"&gt;Alula&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="text-[10px] uppercase tracking-[0.3em] hidden sm:inline" style="color: var(--marino); opacity: 0.55"&gt;Hostel · 1932&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="hidden md:flex items-center gap-8 text-sm" style="color: var(--marino)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#historia" class="hover:opacity-60 transition"&gt;Historia&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#servicios" class="hover:opacity-60 transition"&gt;Servicios&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#habitaciones" class="hover:opacity-60 transition"&gt;Habitaciones&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#ubicacion" class="hover:opacity-60 transition"&gt;Ubicación&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="#reservar" class="btn-primary px-5 py-2.5 text-[11px] uppercase tracking-[0.2em] rounded-full font-medium"&gt;Reservar&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/nav&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- <span class="s1">═══════</span> HERO <span class="s1">═══════</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section class="hero-image relative min-h-screen flex items-end pb-20 pt-32"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="absolute left-6 md:left-10 top-1/2 -translate-y-1/2 hidden lg:block"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="vertical-text text-[11px] uppercase font-medium" style="color: var(--crema); opacity: 0.75"&gt;Loma de Santa Cecilia · Mar del Plata&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="max-w-7xl mx-auto px-6 md:px-10 w-full relative z-10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="max-w-4xl"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="reveal flex items-center gap-3 mb-7"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="block w-12 h-px" style="background: var(--crema)"&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="text-[10px] uppercase tracking-[0.4em] font-medium" style="color: var(--crema)"&gt;Est. 1932 · Casa frente al mar&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1 class="reveal delay-1 hero-title font-display font-light text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.98] mb-7" style="color: var(--crema)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>Dormí en la &lt;em&gt;historia&lt;/em&gt;&lt;br/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>de Mar del Plata</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="reveal delay-2 font-display text-lg md:text-2xl italic max-w-2xl mb-10 font-light" style="color: var(--crema); opacity: 0.92"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>Una joya de 1932 frente al mar en la Loma de Santa Cecilia.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="reveal delay-3 flex flex-wrap gap-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;a href="#reservar" class="btn-primary inline-flex items-center gap-3 px-8 py-4 rounded-full text-[11px] uppercase tracking-[0.25em] font-medium"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Reservar ahora</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;&lt;path d="M5 12h14M13 5l7 7-7 7"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;a href="#historia" class="inline-flex items-center gap-3 px-8 py-4 rounded-full text-[11px] uppercase tracking-[0.25em] font-medium border transition hover:bg-white/10" style="border-color: var(--crema); color: var(--crema)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Conocer la casa</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="absolute bottom-8 right-6 md:right-10 hidden md:flex items-center gap-3" style="color: var(--marino)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="text-[10px] uppercase tracking-[0.3em] font-medium opacity-70"&gt;Scroll&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="block w-12 h-px opacity-50" style="background: var(--marino)"&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- <span class="s1">═══════</span> HISTORIA <span class="s1">═══════</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section id="historia" class="relative py-24 md:py-40 overflow-hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="max-w-7xl mx-auto px-6 md:px-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="lg:col-span-5 order-2 lg:order-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="relative"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1100&amp;q=80" alt="Detalle arquitectónico de la casa Alula" class="w-full h-[55vh] md:h-[65vh] object-cover rounded-sm shadow-2xl" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="absolute -bottom-6 -right-6 md:-bottom-10 md:-right-10 px-7 py-5 md:px-10 md:py-7" style="background: var(--marino); color: var(--crema)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="font-display text-4xl md:text-6xl leading-none"&gt;1932&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="text-[10px] uppercase tracking-[0.3em] mt-2 opacity-80"&gt;Año fundacional&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="lg:col-span-7 order-1 lg:order-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="inline-block text-[10px] uppercase tracking-[0.4em] font-medium mb-6" style="color: var(--terracota)"&gt;— Nuestra historia&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 class="font-display font-light text-4xl md:text-6xl leading-[1.05] mb-8" style="color: var(--marino)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>Una casa diseñada&lt;br/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>por &lt;em class="italic"&gt;Alula Baldassarini.&lt;/em&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="space-y-5 text-base md:text-lg leading-relaxed max-w-xl" style="color: var(--marino)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;En la Loma de Santa Cecilia —el punto fundacional de Mar del Plata— se levanta una joya pintoresquista de 650 m² firmada en 1932 por el arquitecto Alula Baldassarini. Tejas, ladrillo visto, ventanales en arco y el rumor del mar que se cuela entre los pinos.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Adentro, la chimenea a leña sigue encendida en invierno. Afuera, el balcón panorámico mira la costa de La Perla. Es un hostel, sí, pero también es una casa con memoria —pensada para nómadas digitales, viajeros lentos y quienes saben que dormir bajo techos así no se olvida.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="grid grid-cols-3 gap-6 mt-12 pt-10 border-t" style="border-color: rgba(20,37,61,0.15)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="font-display text-3xl md:text-4xl" style="color: var(--marino)"&gt;650&lt;span class="text-base align-top ml-0.5"&gt;m²&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="text-[11px] uppercase tracking-[0.2em] mt-1.5 opacity-60" style="color: var(--marino)"&gt;Patrimonio&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="font-display text-3xl md:text-4xl" style="color: var(--marino)"&gt;10&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="text-[11px] uppercase tracking-[0.2em] mt-1.5 opacity-60" style="color: var(--marino)"&gt;Habitaciones&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="font-display text-3xl md:text-4xl" style="color: var(--marino)"&gt;100&lt;span class="text-base align-top ml-0.5"&gt;m&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="text-[11px] uppercase tracking-[0.2em] mt-1.5 opacity-60" style="color: var(--marino)"&gt;Al mar&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="max-w-7xl mx-auto px-6 md:px-10"&gt;&lt;div class="divider-line"&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- <span class="s1">═══════</span> SERVICIOS <span class="s1">═══════</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section id="servicios" class="relative py-24 md:py-32"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="max-w-7xl mx-auto px-6 md:px-10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="flex flex-col md:flex-row md:items-end md:justify-between mb-14 md:mb-16 gap-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="inline-block text-[10px] uppercase tracking-[0.4em] font-medium mb-4" style="color: var(--terracota)"&gt;— Servicios&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h2 class="font-display font-light text-4xl md:text-5xl leading-[1.05]" style="color: var(--marino)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Comodidades&lt;br/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;em class="italic"&gt;de la casa.&lt;/em&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="max-w-md text-sm md:text-base leading-relaxed opacity-80" style="color: var(--marino)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>Pensado para quienes trabajan, viajan y se quedan. Desde el escritorio frente al mar hasta el café recién hecho de la mañana.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-px" style="background: rgba(20,37,61,0.12)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="service-card p-7 md:p-10 flex flex-col gap-6 min-h-[230px]" style="background: var(--crema)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" style="color: var(--marino)"&gt;&lt;path d="M12 20h.01"/&gt;&lt;path d="M2 8.5a16 16 0 0 1 20 0"/&gt;&lt;path d="M5 12.5a11 11 0 0 1 14 0"/&gt;&lt;path d="M8.5 16.5a6 6 0 0 1 7 0"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3 class="font-display text-lg md:text-xl mb-1.5" style="color: var(--marino)"&gt;WiFi alta velocidad&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-sm opacity-70 leading-relaxed" style="color: var(--marino)"&gt;Fibra dedicada en cada rincón. Pensada para nómadas y videollamadas.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="service-card p-7 md:p-10 flex flex-col gap-6 min-h-[230px]" style="background: var(--crema)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" style="color: var(--marino)"&gt;&lt;path d="M3 11h18"/&gt;&lt;path d="M5 11V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v5"/&gt;&lt;path d="M5 11v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-8"/&gt;&lt;path d="M9 7h6"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3 class="font-display text-lg md:text-xl mb-1.5" style="color: var(--marino)"&gt;Cocina equipada&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-sm opacity-70 leading-relaxed" style="color: var(--marino)"&gt;Espaciosa y luminosa, con todo lo necesario para cocinar como en casa.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="service-card p-7 md:p-10 flex flex-col gap-6 min-h-[230px]" style="background: var(--crema)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" style="color: var(--marino)"&gt;&lt;path d="M17 8h1a4 4 0 1 1 0 8h-1"/&gt;&lt;path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/&gt;&lt;line x1="6" y1="2" x2="6" y2="4"/&gt;&lt;line x1="10" y1="2" x2="10" y2="4"/&gt;&lt;line x1="14" y1="2" x2="14" y2="4"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3 class="font-display text-lg md:text-xl mb-1.5" style="color: var(--marino)"&gt;Café y té de cortesía&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-sm opacity-70 leading-relaxed" style="color: var(--marino)"&gt;Disponibles las 24 horas. Tueste local seleccionado.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="service-card p-7 md:p-10 flex flex-col gap-6 min-h-[230px]" style="background: var(--crema)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" style="color: var(--marino)"&gt;&lt;rect x="2" y="3" width="20" height="14" rx="2"/&gt;&lt;line x1="8" y1="21" x2="16" y2="21"/&gt;&lt;line x1="12" y1="17" x2="12" y2="21"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3 class="font-display text-lg md:text-xl mb-1.5" style="color: var(--marino)"&gt;Coworking&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-sm opacity-70 leading-relaxed" style="color: var(--marino)"&gt;Mesas amplias, enchufes y luz natural. Para viajar con la oficina.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="service-card p-7 md:p-10 flex flex-col gap-6 min-h-[230px]" style="background: var(--crema)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" style="color: var(--marino)"&gt;&lt;path d="M3 21V10l9-7 9 7v11"/&gt;&lt;path d="M9 21v-7h6v7"/&gt;&lt;path d="M5 14h2M17 14h2"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3 class="font-display text-lg md:text-xl mb-1.5" style="color: var(--marino)"&gt;Living histórico&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-sm opacity-70 leading-relaxed" style="color: var(--marino)"&gt;Hogar a leña, sillones de cuero y vista al mar. El corazón de la casa.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- <span class="s1">═══════</span> HABITACIONES <span class="s1">═══════</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section id="habitaciones" class="relative py-24 md:py-32" style="background: var(--marino); color: var(--crema)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="max-w-7xl mx-auto px-6 md:px-10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="text-center mb-14 md:mb-16 max-w-2xl mx-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="inline-block text-[10px] uppercase tracking-[0.4em] font-medium mb-4" style="color: var(--madera-claro)"&gt;— Habitaciones&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 class="font-display font-light text-4xl md:text-5xl leading-[1.05] mb-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>Dormitorios &lt;em class="italic"&gt;luminosos&lt;/em&gt;,&lt;br/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>impecables, compartidos.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="opacity-75 text-base md:text-lg max-w-xl mx-auto"&gt;Camas amplias, ropa blanca de hostel boutique, ventanas grandes y un silencio que solo se rompe con el viento del mar.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;article class="group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="overflow-hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=900&amp;q=80" alt="Dormitorio compartido de 4 camas" class="w-full h-72 md:h-80 object-cover group-hover:scale-105 transition duration-700"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="pt-6 flex justify-between items-start gap-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;h3 class="font-display text-2xl mb-1"&gt;Dormitorio · 4 camas&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;p class="text-sm opacity-70"&gt;Mixto · baño compartido · luz natural&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="text-right shrink-0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="text-[10px] uppercase tracking-[0.2em] opacity-60"&gt;Desde&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="font-display text-xl"&gt;USD 18&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/article&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;article class="group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="overflow-hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=900&amp;q=80" alt="Dormitorio compartido de 6 camas" class="w-full h-72 md:h-80 object-cover group-hover:scale-105 transition duration-700"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="pt-6 flex justify-between items-start gap-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;h3 class="font-display text-2xl mb-1"&gt;Dormitorio · 6 camas&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;p class="text-sm opacity-70"&gt;Mixto · cortinado individual · luminoso&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="text-right shrink-0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="text-[10px] uppercase tracking-[0.2em] opacity-60"&gt;Desde&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="font-display text-xl"&gt;USD 15&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/article&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;article class="group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="overflow-hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=900&amp;q=80" alt="Dormitorio compartido de 8 camas con vista" class="w-full h-72 md:h-80 object-cover group-hover:scale-105 transition duration-700"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="pt-6 flex justify-between items-start gap-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;h3 class="font-display text-2xl mb-1"&gt;Dormitorio · 8 camas&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;p class="text-sm opacity-70"&gt;Mixto · vista al mar · espacioso&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="text-right shrink-0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="text-[10px] uppercase tracking-[0.2em] opacity-60"&gt;Desde&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;div class="font-display text-xl"&gt;USD 13&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/article&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="text-center mt-14"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#reservar" class="inline-flex items-center gap-3 px-8 py-4 rounded-full text-[11px] uppercase tracking-[0.3em] font-medium border transition hover:bg-white/5" style="border-color: var(--madera); color: var(--madera-claro)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>Ver disponibilidad</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;&lt;path d="M5 12h14M13 5l7 7-7 7"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- <span class="s1">═══════</span> UBICACIÓN <span class="s1">═══════</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section id="ubicacion" class="relative py-24 md:py-32"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="max-w-7xl mx-auto px-6 md:px-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="inline-block text-[10px] uppercase tracking-[0.4em] font-medium mb-4" style="color: var(--terracota)"&gt;— Cómo encontrarnos&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 class="font-display font-light text-4xl md:text-6xl leading-[1.05] mb-8" style="color: var(--marino)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>En la &lt;em class="italic"&gt;Loma de Santa Cecilia&lt;/em&gt;,&lt;br/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>frente al mar.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="space-y-2 mb-10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="text-[10px] uppercase tracking-[0.3em] opacity-60" style="color: var(--marino)"&gt;Dirección&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="font-display text-2xl md:text-3xl" style="color: var(--marino)"&gt;Av. Patricio Peralta Ramos 1361&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="text-base opacity-75" style="color: var(--marino)"&gt;La Perla · Mar del Plata · Buenos Aires · Argentina&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="flex flex-wrap gap-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;a href="https://www.google.com/maps/search/?api=1&amp;query=Av.+Patricio+Peralta+Ramos+1361+Mar+del+Plata" target="_blank" rel="noopener" class="btn-primary inline-flex items-center gap-3 px-8 py-4 rounded-full text-[11px] uppercase tracking-[0.25em] font-medium"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;&lt;path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/&gt;&lt;circle cx="12" cy="10" r="3"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Cómo llegar</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;a href="#reservar" class="btn-outline inline-flex items-center gap-3 px-8 py-4 rounded-full text-[11px] uppercase tracking-[0.25em] font-medium"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Consultar disponibilidad</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="grid grid-cols-2 gap-6 mt-12 pt-10 border-t max-w-md" style="border-color: rgba(20,37,61,0.15); color: var(--marino)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="text-[10px] uppercase tracking-[0.3em] opacity-60 mb-1.5"&gt;Aeropuerto Astor Piazzolla&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="font-display text-xl"&gt;15 min&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="text-[10px] uppercase tracking-[0.3em] opacity-60 mb-1.5"&gt;Terminal de ómnibus&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="font-display text-xl"&gt;8 min&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="relative aspect-[4/5] lg:aspect-auto lg:h-[600px]"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;iframe</p>
+<p class="p1"><span class="Apple-converted-space">          </span>title="Mapa de Alula Hostel"</p>
+<p class="p1"><span class="Apple-converted-space">          </span>src="https://www.google.com/maps?q=Av.+Patricio+Peralta+Ramos+1361,+Mar+del+Plata&amp;output=embed"</p>
+<p class="p1"><span class="Apple-converted-space">          </span>class="w-full h-full map-frame"</p>
+<p class="p1"><span class="Apple-converted-space">          </span>style="border:0"</p>
+<p class="p1"><span class="Apple-converted-space">          </span>allowfullscreen=""</p>
+<p class="p1"><span class="Apple-converted-space">          </span>loading="lazy"</p>
+<p class="p1"><span class="Apple-converted-space">          </span>referrerpolicy="no-referrer-when-downgrade"&gt;&lt;/iframe&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="absolute -bottom-6 -left-6 md:-bottom-8 md:-left-8 px-5 py-3 md:px-7 md:py-4 max-w-[80%]" style="background: var(--marino); color: var(--crema)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="font-display text-base md:text-lg italic"&gt;"Frente al mar, donde nació la ciudad."&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- <span class="s1">═══════</span> CTA RESERVAR <span class="s1">═══════</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section id="reservar" class="relative py-24 md:py-32" style="background: var(--piedra)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="max-w-4xl mx-auto px-6 md:px-10 text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="inline-block text-[10px] uppercase tracking-[0.4em] font-medium mb-4" style="color: var(--terracota)"&gt;— Reservá tu estadía&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2 class="font-display font-light text-4xl md:text-6xl leading-[1.05] mb-8" style="color: var(--marino)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>Vení a dormir &lt;em class="italic"&gt;con vista al mar.&lt;/em&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="text-base md:text-lg opacity-80 mb-10 max-w-2xl mx-auto" style="color: var(--marino)"&gt;Escribinos por WhatsApp o reservá directo. Respondemos en minutos. Sin comisiones de plataformas.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="flex flex-wrap justify-center gap-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="https://wa.me/5492235365385?text=Hola!%20Quiero%20reservar%20en%20Alula%20Hostel" target="_blank" rel="noopener" class="btn-primary inline-flex items-center gap-3 px-8 py-4 rounded-full text-[11px] uppercase tracking-[0.25em] font-medium"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>Reservar por WhatsApp</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="mailto:hola@alulahostel.com" class="btn-outline inline-flex items-center gap-3 px-8 py-4 rounded-full text-[11px] uppercase tracking-[0.25em] font-medium"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>Enviar email</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- <span class="s1">═══════</span> FOOTER <span class="s1">═══════</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;footer class="py-16 md:py-20" style="background: var(--marino); color: var(--crema)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="max-w-7xl mx-auto px-6 md:px-10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 mb-14 pb-14 border-b" style="border-color: rgba(242,234,220,0.15)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="font-display text-3xl mb-4"&gt;Alula&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="text-sm opacity-70 leading-relaxed max-w-xs"&gt;Hostel boutique en una casa de 1932 en la Loma de Santa Cecilia, Mar del Plata.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="text-[10px] uppercase tracking-[0.3em] opacity-60 mb-4"&gt;Visitanos&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="space-y-1.5 text-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Av. Patricio Peralta Ramos 1361&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="opacity-70"&gt;La Perla, Mar del Plata&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="opacity-70"&gt;Argentina&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="text-[10px] uppercase tracking-[0.3em] opacity-60 mb-4"&gt;Seguinos&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;a href="https://instagram.com/alulahostel" target="_blank" rel="noopener" class="inline-flex items-center gap-2 hover:opacity-70 transition"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"&gt;&lt;rect x="2" y="2" width="20" height="20" rx="5"/&gt;&lt;path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/&gt;&lt;line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="text-sm"&gt;@alulahostel&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="flex flex-col md:flex-row justify-between gap-3 text-xs opacity-50"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;© 2026 Alula Hostel · Casa patrimonial 1932 · Arq. Alula Baldassarini&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Loma de Santa Cecilia · Mar del Plata · AR&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/footer&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- <span class="s1">═══════</span> FLOATING WHATSAPP <span class="s1">═══════</span> --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;a href="https://wa.me/5492235365385?text=Hola!%20Quiero%20info%20de%20Alula%20Hostel" target="_blank" rel="noopener" class="wa-float fixed bottom-5 right-5 md:bottom-6 md:right-6 z-40 w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center" style="background: #25D366" aria-label="Chatear por WhatsApp"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;svg width="28" height="28" viewBox="0 0 24 24" fill="white" aria-hidden="true"&gt;&lt;path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/&gt;&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/a&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
 </body>
 </html>
