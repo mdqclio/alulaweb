@@ -158,7 +158,7 @@
     <div class="max-w-7xl mx-auto px-6 md:px-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
       <div class="lg:col-span-5 order-2 lg:order-1">
         <div class="relative">
-          <img src="https://mdqclio.github.io/alulaweb/fotos/fachada.jpg" alt="Fachada Tudor pintoresquista 1932 — Alula Hostel" class="w-full h-[55vh] md:h-[65vh] object-cover rounded-sm shadow-2xl" />
+          <img src="https://mdqclio.github.io/alulaweb/fotos/fachada.jpg" alt="Fachada Tudor pintoresquista 1932 — Alula Hostel" class="w-full h-[55vh] md:h-[65vh] object-cover object-top rounded-sm shadow-2xl" />
           <div class="absolute -bottom-6 -right-6 md:-bottom-10 md:-right-10 px-7 py-5 md:px-10 md:py-7" style="background: var(--marino); color: var(--crema)">
             <div class="font-display text-4xl md:text-6xl leading-none">1932</div>
             <div class="text-[10px] uppercase tracking-[0.3em] mt-2 opacity-80">Año fundacional</div>
@@ -181,7 +181,7 @@
             <div class="text-[11px] uppercase tracking-[0.2em] mt-1.5 opacity-60" style="color: var(--marino)">Patrimonio</div>
           </div>
           <div>
-            <div class="font-display text-3xl md:text-4xl" style="color: var(--marino)">10</div>
+            <div class="font-display text-3xl md:text-4xl" style="color: var(--marino)">4</div>
             <div class="text-[11px] uppercase tracking-[0.2em] mt-1.5 opacity-60" style="color: var(--marino)">Habitaciones</div>
           </div>
           <div>
@@ -314,13 +314,79 @@
       </div>
 
       <div class="text-center mt-14">
-        <a href="#reservar" class="inline-flex items-center gap-3 px-8 py-4 rounded-full text-[11px] uppercase tracking-[0.3em] font-medium border transition hover:bg-white/5" style="border-color: var(--madera); color: var(--madera-claro)">
-          Ver disponibilidad
+        <button id="abrirDisponibilidadModal" type="button" class="inline-flex items-center gap-3 px-8 py-4 rounded-full text-[11px] uppercase tracking-[0.3em] font-medium border transition hover:bg-white/5" style="border-color: var(--madera); color: var(--madera-claro)">
+          Consultar disponibilidad
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ RESEÑAS ═══════ -->
+  <section id="resenas" class="relative py-24 md:py-32 overflow-hidden" style="background: var(--crema)">
+    <div class="max-w-7xl mx-auto px-6 md:px-10">
+      <div class="text-center mb-14 md:mb-16">
+        <span class="inline-block text-[10px] uppercase tracking-[0.4em] font-medium mb-4" style="color: var(--terracota)">— Lo que dicen los huéspedes</span>
+        <h2 class="font-display font-light text-4xl md:text-5xl leading-[1.05]" style="color: var(--marino)">
+          Palabras de quienes<br/>
+          <em class="italic">ya estuvieron acá.</em>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+
+        <blockquote class="flex flex-col justify-between p-8 md:p-10" style="background: var(--crema-claro); border: 1px solid rgba(20,37,61,0.08)">
+          <p class="font-display text-lg italic leading-snug mb-6" style="color: var(--marino)">"Excelente lugar para descansar, muy buena ubicación y por sobre todo una atención increíble de parte de Leo y los chicos. Súper recomendado."</p>
+          <footer class="flex items-center gap-3">
+            <div class="w-8 h-px" style="background: var(--madera)"></div>
+            <cite class="not-italic text-[11px] uppercase tracking-[0.25em] font-medium opacity-70" style="color: var(--marino)">Juan Manuel</cite>
+          </footer>
+        </blockquote>
+
+        <blockquote class="flex flex-col justify-between p-8 md:p-10" style="background: var(--crema-claro); border: 1px solid rgba(20,37,61,0.08)">
+          <p class="font-display text-lg italic leading-snug mb-6" style="color: var(--marino)">"La casa es un sueño, la decoración es hermosa y la ubicación en la loma de Santa Cecilia es la más linda de Mardel. Muy tranquilo y limpio todo."</p>
+          <footer class="flex items-center gap-3">
+            <div class="w-8 h-px" style="background: var(--madera)"></div>
+            <cite class="not-italic text-[11px] uppercase tracking-[0.25em] font-medium opacity-70" style="color: var(--marino)">Martina</cite>
+          </footer>
+        </blockquote>
+
+        <blockquote class="flex flex-col justify-between p-8 md:p-10" style="background: var(--crema-claro); border: 1px solid rgba(20,37,61,0.08)">
+          <p class="font-display text-lg italic leading-snug mb-6" style="color: var(--marino)">"Hermoso hostel, muy cómodo y limpio. La cocina está re equipada y el ambiente es muy relajado. Se nota que cuidan cada detalle."</p>
+          <footer class="flex items-center gap-3">
+            <div class="w-8 h-px" style="background: var(--madera)"></div>
+            <cite class="not-italic text-[11px] uppercase tracking-[0.25em] font-medium opacity-70" style="color: var(--marino)">Lucas</cite>
+          </footer>
+        </blockquote>
+
+        <blockquote class="flex flex-col justify-between p-8 md:p-10 md:col-span-1 lg:col-span-1" style="background: var(--crema-claro); border: 1px solid rgba(20,37,61,0.08)">
+          <p class="font-display text-lg italic leading-snug mb-6" style="color: var(--marino)">"Súper buena onda la atención. El lugar tiene un estilo increíble, es tal cual se ve en las fotos o incluso mejor. Volvería mil veces."</p>
+          <footer class="flex items-center gap-3">
+            <div class="w-8 h-px" style="background: var(--madera)"></div>
+            <cite class="not-italic text-[11px] uppercase tracking-[0.25em] font-medium opacity-70" style="color: var(--marino)">Sofía</cite>
+          </footer>
+        </blockquote>
+
+        <blockquote class="flex flex-col justify-between p-8 md:p-10 md:col-span-1 lg:col-span-2" style="background: var(--marino); border: 1px solid rgba(20,37,61,0.08)">
+          <p class="font-display text-lg italic leading-snug mb-6" style="color: var(--crema)">"Un 10 la limpieza y la comodidad de las camas. La ubicación cerca de la playa y la tranquilidad del barrio son puntos clave."</p>
+          <footer class="flex items-center gap-3">
+            <div class="w-8 h-px" style="background: var(--madera-claro)"></div>
+            <cite class="not-italic text-[11px] uppercase tracking-[0.25em] font-medium" style="color: var(--madera-claro)">Cristian</cite>
+          </footer>
+        </blockquote>
+
+      </div>
+
+      <div class="text-center mt-12">
+        <a href="https://instagram.com/alulahostel" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm transition hover:opacity-60" style="color: var(--marino)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          Ver más en @alulahostel
         </a>
       </div>
     </div>
   </section>
+
+  <div class="max-w-7xl mx-auto px-6 md:px-10"><div class="divider-line"></div></div>
 
   <!-- ═══════ UBICACIÓN ═══════ -->
   <section id="ubicacion" class="relative py-24 md:py-32">
@@ -342,9 +408,9 @@
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             Cómo llegar
           </a>
-          <a href="#reservar" class="btn-outline inline-flex items-center gap-3 px-8 py-4 rounded-full text-[11px] uppercase tracking-[0.25em] font-medium">
+          <button id="abrirDisponibilidadModal2" type="button" class="btn-outline inline-flex items-center gap-3 px-8 py-4 rounded-full text-[11px] uppercase tracking-[0.25em] font-medium">
             Consultar disponibilidad
-          </a>
+          </button>
         </div>
 
         <div class="grid grid-cols-2 gap-6 mt-12 pt-10 border-t max-w-md" style="border-color: rgba(20,37,61,0.15); color: var(--marino)">
@@ -451,6 +517,121 @@
       </div>
     </div>
   </footer>
+
+  <!-- ═══════ MODAL DISPONIBILIDAD ═══════ -->
+  <div id="disponibilidadModal" class="fixed inset-0 z-[60] hidden items-end md:items-center justify-center" aria-hidden="true">
+    <div id="disponibilidadOverlay" class="absolute inset-0" style="background: rgba(20,37,61,0.55); backdrop-filter: blur(4px)"></div>
+    <div class="relative w-full md:max-w-lg max-h-[92vh] overflow-y-auto rounded-t-3xl md:rounded-2xl shadow-2xl" style="background: var(--crema)">
+
+      <!-- Header -->
+      <div class="sticky top-0 z-10 px-6 md:px-8 pt-6 pb-4 flex items-start justify-between" style="background: var(--crema)">
+        <div>
+          <div class="text-[10px] uppercase tracking-[0.3em] opacity-60 mb-1" style="color: var(--marino)">Alula Hostel</div>
+          <h3 class="font-display text-2xl md:text-3xl leading-tight" style="color: var(--marino)">Consultar disponibilidad</h3>
+        </div>
+        <button id="cerrarDisponibilidadModal" type="button" class="shrink-0 -mt-1 -mr-2 w-9 h-9 flex items-center justify-center rounded-full hover:bg-stone-300/40 transition" aria-label="Cerrar">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--marino)"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <!-- Formulario -->
+      <form id="disponibilidadForm" class="px-6 md:px-8 pb-8 space-y-5">
+
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-[10px] uppercase tracking-[0.2em] font-medium mb-2" style="color: var(--marino)">Llegada *</label>
+            <input type="date" id="dispCheckIn" required class="w-full px-4 py-3 border rounded-lg text-sm bg-white focus:outline-none focus:ring-2" style="border-color: rgba(20,37,61,0.2); color: var(--marino)">
+          </div>
+          <div>
+            <label class="block text-[10px] uppercase tracking-[0.2em] font-medium mb-2" style="color: var(--marino)">Salida *</label>
+            <input type="date" id="dispCheckOut" required class="w-full px-4 py-3 border rounded-lg text-sm bg-white focus:outline-none focus:ring-2" style="border-color: rgba(20,37,61,0.2); color: var(--marino)">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-[10px] uppercase tracking-[0.2em] font-medium mb-2" style="color: var(--marino)">Cantidad de huéspedes *</label>
+          <select id="dispHuespedes" required class="w-full px-4 py-3 border rounded-lg text-sm bg-white focus:outline-none focus:ring-2" style="border-color: rgba(20,37,61,0.2); color: var(--marino)">
+            <option value="">¿Cuántos son?</option>
+            <option value="1">1 persona</option>
+            <option value="2">2 personas</option>
+            <option value="3">3 personas</option>
+            <option value="4">4 personas</option>
+            <option value="5">5 personas</option>
+            <option value="6">6 o más — consultanos</option>
+          </select>
+        </div>
+
+        <div id="dispError" class="hidden text-sm px-4 py-3 rounded-lg" style="background: rgba(184,89,62,0.12); color: var(--terracota)"></div>
+
+        <button id="dispSubmitBtn" type="submit" class="btn-primary w-full inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full text-[11px] uppercase tracking-[0.25em] font-medium">
+          <span id="dispSubmitText">Ver disponibilidad</span>
+          <svg id="dispSpinner" class="hidden animate-spin" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 1 1-6.22-8.56"/></svg>
+        </button>
+      </form>
+
+      <!-- Resultado -->
+      <div id="dispResultado" class="hidden px-6 md:px-8 pb-8">
+        <div class="divider-line mb-6"></div>
+
+        <!-- Disponible -->
+        <div id="dispDisponible" class="hidden">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background: rgba(20,37,61,0.08)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--marino)"><path d="M20 6 9 17l-5-5"/></svg>
+            </div>
+            <div>
+              <div class="font-display text-lg" style="color: var(--marino)">¡Hay lugar!</div>
+              <div class="text-[11px] opacity-60" style="color: var(--marino)" id="dispFechasResumen"></div>
+            </div>
+          </div>
+          <div class="p-5 rounded-lg mb-5" style="background: var(--crema-claro); border: 1px solid rgba(20,37,61,0.1)">
+            <div class="grid grid-cols-2 gap-4 text-sm">
+              <div>
+                <div class="text-[10px] uppercase tracking-[0.2em] opacity-60 mb-1" style="color: var(--marino)">Noches</div>
+                <div class="font-display text-2xl" style="color: var(--marino)" id="dispNoches">—</div>
+              </div>
+              <div>
+                <div class="text-[10px] uppercase tracking-[0.2em] opacity-60 mb-1" style="color: var(--marino)">Precio estimado</div>
+                <div class="font-display text-2xl" style="color: var(--marino)" id="dispPrecioTotal">—</div>
+              </div>
+              <div>
+                <div class="text-[10px] uppercase tracking-[0.2em] opacity-60 mb-1" style="color: var(--marino)">Precio por noche</div>
+                <div class="text-base" style="color: var(--marino)" id="dispPrecioPorNoche">—</div>
+              </div>
+              <div>
+                <div class="text-[10px] uppercase tracking-[0.2em] opacity-60 mb-1" style="color: var(--marino)">Camas disponibles</div>
+                <div class="text-base" style="color: var(--marino)" id="dispCamasDisponibles">—</div>
+              </div>
+            </div>
+          </div>
+          <p class="text-[11px] opacity-60 mb-5 leading-relaxed" style="color: var(--marino)">El precio es una estimación. Confirmamos el total exacto por WhatsApp, sin sorpresas.</p>
+          <a id="dispWaLink" href="#" target="_blank" rel="noopener" class="btn-primary w-full inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full text-[11px] uppercase tracking-[0.25em] font-medium">
+            Reservar por WhatsApp
+          </a>
+        </div>
+
+        <!-- No disponible -->
+        <div id="dispNoDisponible" class="hidden text-center py-4">
+          <div class="w-12 h-12 mx-auto mb-4 rounded-full flex items-center justify-center" style="background: rgba(184,89,62,0.12)">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--terracota)"><path d="M18 6 6 18M6 6l12 12"/></svg>
+          </div>
+          <p class="font-display text-xl mb-2" style="color: var(--marino)">Sin lugar para esas fechas</p>
+          <p class="text-sm opacity-70 mb-6" style="color: var(--marino)">Pero probá con otras fechas o escribinos — a veces se libera alguna reserva.</p>
+          <div class="flex flex-col gap-3">
+            <button id="dispOtrosFechasBtn" type="button" class="btn-outline w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-[11px] uppercase tracking-[0.2em] font-medium">
+              Probar otras fechas
+            </button>
+            <a href="https://wa.me/5492234397923?text=Hola!%20Consulto%20disponibilidad%20en%20Alula%20Hostel" target="_blank" rel="noopener" class="btn-primary w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-[11px] uppercase tracking-[0.2em] font-medium">
+              Consultar por WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <button id="dispNuevaConsultaBtn" type="button" class="mt-4 text-[11px] uppercase tracking-[0.2em] opacity-50 hover:opacity-80 transition block mx-auto" style="color: var(--marino)">← Nueva consulta</button>
+      </div>
+
+    </div>
+  </div>
 
   <!-- ═══════ MODAL SUGERIR LUGAR ═══════ -->
   <div id="sugerirModal" class="fixed inset-0 z-[60] hidden items-end md:items-center justify-center" aria-hidden="true">
@@ -751,6 +932,264 @@
         submitBtn.disabled = false;
         submitText.textContent = "Enviar para revisión";
         submitSpinner.classList.add("hidden");
+      }
+    });
+  </script>
+
+  <!-- ═══════ FIREBASE: DISPONIBILIDAD ═══════ -->
+  <script type="module">
+    import { initializeApp, getApps } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import { getDatabase, ref, get, query, orderByChild } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+
+    // ── Reutilizar la app de Firebase ya inicializada por el módulo de sugerencias ──
+    // Si la app ya existe la reutilizamos; si no, la creamos con la misma config.
+    // IMPORTANTE: completar con los valores reales en el módulo de sugerencias (arriba).
+    const firebaseConfig = {
+      apiKey: "TU_API_KEY",
+      authDomain: "alula-hostel.firebaseapp.com",
+      databaseURL: "https://alula-hostel-default-rtdb.firebaseio.com",
+      projectId: "alula-hostel",
+      storageBucket: "alula-hostel.appspot.com",
+      messagingSenderId: "TU_SENDER_ID",
+      appId: "TU_APP_ID"
+    };
+
+    // Usar la app ya inicializada (mismo nombre de app) o crear una secundaria
+    let app2;
+    try {
+      app2 = getApps().find(a => a.name === "[DEFAULT]") || initializeApp(firebaseConfig, "disponibilidad");
+    } catch(e) {
+      app2 = getApps()[0];
+    }
+    const db2 = getDatabase(app2);
+
+    // ── Capacidad total del hostel ──
+    // En Firebase: /configuracion/camasTotal  (número entero)
+    // En Firebase: /configuracion/precioCamaBase  (precio por cama por noche en ARS)
+    // Temporadas en: /tarifas/temporadas  (array: [{desde:"12-15", hasta:"03-15", multiplicador:1.5, nombre:"Alta temporada"}])
+    // Reservas en:   /reservas/{id}  ({checkIn:"2026-01-15", checkOut:"2026-01-20", camas:4, estado:"confirmada"})
+
+    const CAMAS_TOTAL_FALLBACK = 16;   // valor por defecto si Firebase no está configurado
+    const PRECIO_BASE_FALLBACK = 8500; // ARS por cama por noche, fallback
+
+    // ── Helpers de fecha ──
+    function parseFecha(str) {
+      const [y, m, d] = str.split("-").map(Number);
+      return new Date(y, m - 1, d);
+    }
+    function diffNoches(checkIn, checkOut) {
+      return Math.round((parseFecha(checkOut) - parseFecha(checkIn)) / 86400000);
+    }
+    function fechasSuperpuestas(r, checkIn, checkOut) {
+      // Overlap: el check-out de la reserva es > check-in pedido Y el check-in de la reserva es < check-out pedido
+      return r.checkIn < checkOut && r.checkOut > checkIn;
+    }
+    function formatPesos(n) {
+      return "$\u00A0" + Math.round(n).toLocaleString("es-AR");
+    }
+    function multiplicadorPorFecha(fecha, temporadas) {
+      const [, mes, dia] = fecha.split("-").map(Number);
+      const md = `${String(mes).padStart(2,"0")}-${String(dia).padStart(2,"0")}`;
+      for (const t of temporadas) {
+        const { desde, hasta } = t;
+        // Temporada que cruza el año (ej: 12-15 → 03-15)
+        if (desde > hasta) {
+          if (md >= desde || md <= hasta) return t.multiplicador;
+        } else {
+          if (md >= desde && md <= hasta) return t.multiplicador;
+        }
+      }
+      return 1;
+    }
+
+    // ── Consulta principal ──
+    async function consultarDisponibilidad(checkIn, checkOut, huespedes) {
+      let camasTotal = CAMAS_TOTAL_FALLBACK;
+      let precioCamaBase = PRECIO_BASE_FALLBACK;
+      let temporadas = [];
+
+      try {
+        // Leer configuración
+        const snapConfig = await get(ref(db2, "configuracion"));
+        if (snapConfig.exists()) {
+          camasTotal = snapConfig.val().camasTotal ?? camasTotal;
+          precioCamaBase = snapConfig.val().precioCamaBase ?? precioCamaBase;
+        }
+        // Leer temporadas
+        const snapTarifas = await get(ref(db2, "tarifas/temporadas"));
+        if (snapTarifas.exists()) {
+          const raw = snapTarifas.val();
+          temporadas = Array.isArray(raw) ? raw : Object.values(raw);
+        }
+        // Leer reservas confirmadas
+        const snapReservas = await get(ref(db2, "reservas"));
+        let camasOcupadas = 0;
+        if (snapReservas.exists()) {
+          snapReservas.forEach(child => {
+            const r = child.val();
+            if (r.estado === "confirmada" && fechasSuperpuestas(r, checkIn, checkOut)) {
+              camasOcupadas += (r.camas ?? 0);
+            }
+          });
+        }
+
+        const camasDisponibles = camasTotal - camasOcupadas;
+        const disponible = camasDisponibles >= huespedes;
+
+        // Calcular precio promedio ponderado por noche
+        const noches = diffNoches(checkIn, checkOut);
+        let precioTotal = 0;
+        const dIn = parseFecha(checkIn);
+        for (let i = 0; i < noches; i++) {
+          const d = new Date(dIn);
+          d.setDate(d.getDate() + i);
+          const fechaStr = d.toISOString().slice(0, 10);
+          const mult = multiplicadorPorFecha(fechaStr, temporadas);
+          precioTotal += precioCamaBase * mult * huespedes;
+        }
+
+        return { disponible, camasDisponibles, camasTotal, noches, precioTotal, precioPorNoche: precioTotal / noches };
+      } catch (err) {
+        console.warn("Firebase no configurado — usando valores por defecto.", err);
+        // Si Firebase no está configurado todavía, simulamos disponibilidad y precio base
+        const noches = diffNoches(checkIn, checkOut);
+        return {
+          disponible: true,
+          camasDisponibles: camasTotal,
+          camasTotal,
+          noches,
+          precioTotal: precioCamaBase * huespedes * noches,
+          precioPorNoche: precioCamaBase * huespedes
+        };
+      }
+    }
+
+    // ── DOM ──
+    const modal = document.getElementById("disponibilidadModal");
+    const overlay = document.getElementById("disponibilidadOverlay");
+    const cerrarBtn = document.getElementById("cerrarDisponibilidadModal");
+    const form = document.getElementById("disponibilidadForm");
+    const checkInInput = document.getElementById("dispCheckIn");
+    const checkOutInput = document.getElementById("dispCheckOut");
+    const huespedesSelect = document.getElementById("dispHuespedes");
+    const errorBox = document.getElementById("dispError");
+    const submitBtn = document.getElementById("dispSubmitBtn");
+    const submitText = document.getElementById("dispSubmitText");
+    const spinner = document.getElementById("dispSpinner");
+    const resultado = document.getElementById("dispResultado");
+    const dispDisponible = document.getElementById("dispDisponible");
+    const dispNoDisponible = document.getElementById("dispNoDisponible");
+    const dispFechasResumen = document.getElementById("dispFechasResumen");
+    const dispNoches = document.getElementById("dispNoches");
+    const dispPrecioTotal = document.getElementById("dispPrecioTotal");
+    const dispPrecioPorNoche = document.getElementById("dispPrecioPorNoche");
+    const dispCamasDisponibles = document.getElementById("dispCamasDisponibles");
+    const dispWaLink = document.getElementById("dispWaLink");
+    const dispOtrosFechasBtn = document.getElementById("dispOtrosFechasBtn");
+    const dispNuevaConsultaBtn = document.getElementById("dispNuevaConsultaBtn");
+
+    // Fecha mínima = hoy
+    const hoy = new Date().toISOString().slice(0, 10);
+    checkInInput.min = hoy;
+    checkOutInput.min = hoy;
+    checkInInput.addEventListener("change", () => {
+      checkOutInput.min = checkInInput.value;
+      if (checkOutInput.value && checkOutInput.value <= checkInInput.value) {
+        checkOutInput.value = "";
+      }
+    });
+
+    function abrirModal() {
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+      document.body.style.overflow = "hidden";
+    }
+    function cerrarModal() {
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+      document.body.style.overflow = "";
+      resetFormulario();
+    }
+    function resetFormulario() {
+      form.classList.remove("hidden");
+      resultado.classList.add("hidden");
+      dispDisponible.classList.add("hidden");
+      dispNoDisponible.classList.add("hidden");
+      errorBox.classList.add("hidden");
+      form.reset();
+    }
+    function mostrarError(msg) {
+      errorBox.textContent = msg;
+      errorBox.classList.remove("hidden");
+    }
+
+    // Conectar botones de apertura
+    document.getElementById("abrirDisponibilidadModal")?.addEventListener("click", abrirModal);
+    document.getElementById("abrirDisponibilidadModal2")?.addEventListener("click", abrirModal);
+    cerrarBtn.addEventListener("click", cerrarModal);
+    overlay.addEventListener("click", cerrarModal);
+    dispOtrosFechasBtn?.addEventListener("click", resetFormulario);
+    dispNuevaConsultaBtn?.addEventListener("click", resetFormulario);
+
+    // Submit
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      errorBox.classList.add("hidden");
+
+      const checkIn = checkInInput.value;
+      const checkOut = checkOutInput.value;
+      const huespedes = parseInt(huespedesSelect.value);
+
+      if (!checkIn || !checkOut || !huespedes) {
+        mostrarError("Por favor completá todos los campos.");
+        return;
+      }
+      if (checkOut <= checkIn) {
+        mostrarError("La fecha de salida debe ser posterior a la llegada.");
+        return;
+      }
+      if (huespedesSelect.value === "6") {
+        // Más de 5: mandar a WhatsApp directamente
+        const txt = encodeURIComponent(`Hola! Somos un grupo grande y consulto disponibilidad en Alula Hostel para el ${checkIn} al ${checkOut}.`);
+        window.open(`https://wa.me/5492234397923?text=${txt}`, "_blank");
+        return;
+      }
+
+      // Loading
+      submitBtn.disabled = true;
+      submitText.textContent = "Consultando...";
+      spinner.classList.remove("hidden");
+
+      try {
+        const res = await consultarDisponibilidad(checkIn, checkOut, huespedes);
+
+        // Mostrar resultado
+        form.classList.add("hidden");
+        resultado.classList.remove("hidden");
+
+        const [y1, m1, d1] = checkIn.split("-");
+        const [y2, m2, d2] = checkOut.split("-");
+        dispFechasResumen.textContent = `${d1}/${m1}/${y1} → ${d2}/${m2}/${y2} · ${huespedes} huésped${huespedes > 1 ? "es" : ""}`;
+
+        if (res.disponible) {
+          dispDisponible.classList.remove("hidden");
+          dispNoches.textContent = res.noches;
+          dispPrecioTotal.textContent = formatPesos(res.precioTotal);
+          dispPrecioPorNoche.textContent = `${formatPesos(res.precioPorNoche)} / noche`;
+          dispCamasDisponibles.textContent = `${res.camasDisponibles} de ${res.camasTotal}`;
+          const txt = encodeURIComponent(
+            `Hola! Quiero reservar en Alula Hostel del ${d1}/${m1}/${y1} al ${d2}/${m2}/${y2} para ${huespedes} persona${huespedes > 1 ? "s" : ""}.`
+          );
+          dispWaLink.href = `https://wa.me/5492234397923?text=${txt}`;
+        } else {
+          dispNoDisponible.classList.remove("hidden");
+        }
+      } catch (err) {
+        mostrarError("No pudimos consultar la disponibilidad. Escribinos por WhatsApp y te respondemos al toque.");
+      } finally {
+        submitBtn.disabled = false;
+        submitText.textContent = "Ver disponibilidad";
+        spinner.classList.add("hidden");
       }
     });
   </script>
