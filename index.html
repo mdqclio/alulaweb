@@ -742,14 +742,15 @@
     </div>
   </div>
 
-  <!-- ═══════ FIREBASE: SUGERENCIAS ═══════ -->
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-    import { getDatabase, ref as dbRef, push, set, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
-    import { getStorage, ref as stRef, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js";
-
-    // ⚠️ TODO LEO: pegar acá la config de Firebase de Alula (Console → Project settings → SDK config)
-    const firebaseConfig = {
+  <!-- ═══════ FIREBASE: CONFIG ÚNICA COMPARTIDA ═══════ -->
+  <!-- ⚠️ TODO LEO: pegar acá la config de Firebase de Alula (Console → Project settings → SDK config).
+       Esta es la ÚNICA definición de firebaseConfig: la usan ambos módulos (sugerencias y
+       disponibilidad). NO dupliques estos valores. La apiKey es pública (identificador de
+       proyecto, no un secreto); la seguridad real depende de las Security Rules.
+       IMPORTANTE: desplegar database.rules.json + storage.rules ANTES de pegar valores reales.
+       Ver docs/auditoria/alulaweb-REMEDIACION.md -->
+  <script>
+    window.__ALULA_FIREBASE_CONFIG__ = {
       apiKey: "TU_API_KEY",
       authDomain: "alula-hostel.firebaseapp.com",
       databaseURL: "https://alula-hostel-default-rtdb.firebaseio.com",
@@ -758,6 +759,16 @@
       messagingSenderId: "TU_SENDER_ID",
       appId: "TU_APP_ID"
     };
+  </script>
+
+  <!-- ═══════ FIREBASE: SUGERENCIAS ═══════ -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import { getDatabase, ref as dbRef, push, set, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+    import { getStorage, ref as stRef, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js";
+
+    // Config única compartida (definida arriba en window.__ALULA_FIREBASE_CONFIG__)
+    const firebaseConfig = window.__ALULA_FIREBASE_CONFIG__;
 
     const app = initializeApp(firebaseConfig);
     const db = getDatabase(app);
@@ -953,16 +964,8 @@
 
     // ── Reutilizar la app de Firebase ya inicializada por el módulo de sugerencias ──
     // Si la app ya existe la reutilizamos; si no, la creamos con la misma config.
-    // IMPORTANTE: completar con los valores reales en el módulo de sugerencias (arriba).
-    const firebaseConfig = {
-      apiKey: "TU_API_KEY",
-      authDomain: "alula-hostel.firebaseapp.com",
-      databaseURL: "https://alula-hostel-default-rtdb.firebaseio.com",
-      projectId: "alula-hostel",
-      storageBucket: "alula-hostel.appspot.com",
-      messagingSenderId: "TU_SENDER_ID",
-      appId: "TU_APP_ID"
-    };
+    // Config única compartida (definida en window.__ALULA_FIREBASE_CONFIG__, ver arriba).
+    const firebaseConfig = window.__ALULA_FIREBASE_CONFIG__;
 
     // Usar la app ya inicializada (mismo nombre de app) o crear una secundaria
     let app2;

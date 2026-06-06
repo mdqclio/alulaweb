@@ -1,0 +1,27 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+
+    "sugerencias_huespedes": {
+      "pendientes": {
+        "$sugerenciaId": {
+          ".read": false,
+          ".write": "!data.exists() && newData.exists()",
+          ".validate": "newData.hasChildren(['nombre', 'categoria', 'lugar', 'porQue', 'estado', 'fechaEnvio'])",
+          "nombre":        { ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length <= 80" },
+          "instagram":     { ".validate": "newData.isString() && newData.val().length <= 80" },
+          "cuandoSeAlojo": { ".validate": "newData.isString() && newData.val().length <= 80" },
+          "categoria":     { ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length <= 60" },
+          "lugar":         { ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length <= 120" },
+          "direccion":     { ".validate": "newData.isString() && newData.val().length <= 200" },
+          "porQue":        { ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length <= 1000" },
+          "fotoUrl":       { ".validate": "newData.isString() && newData.val().length <= 500" },
+          "estado":        { ".validate": "newData.isString() && newData.val() === 'pendiente'" },
+          "fechaEnvio":    { ".validate": "newData.isNumber() || newData.val() === now" },
+          "$other":        { ".validate": false }
+        }
+      }
+    }
+  }
+}

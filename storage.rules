@@ -1,0 +1,29 @@
+rules_version = '2';
+
+// Firebase Storage Security Rules — Alula Hostel
+// DENY-BY-DEFAULT. Solo permite subir fotos de sugerencias UGC en
+// sugerencias/{id}.jpg, validando tipo (imagen) y tamaño (<= 5 MB),
+// que es el mismo límite que aplica el cliente en index.html.
+// Nadie puede leer ni listar Storage públicamente desde el cliente
+// (las URLs de descarga se obtienen vía getDownloadURL tras la subida).
+//
+// DESPLEGAR ANTES de pegar la firebaseConfig real. Ver
+// docs/auditoria/alulaweb-REMEDIACION.md
+
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    // Bloqueo total por defecto.
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+
+    // Excepción: subida de fotos de sugerencias UGC.
+    match /sugerencias/{fotoId} {
+      allow read: if false;
+      allow write: if request.resource != null
+                   && request.resource.size <= 5 * 1024 * 1024
+                   && request.resource.contentType.matches('image/.*');
+    }
+  }
+}

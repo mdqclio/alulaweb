@@ -1,0 +1,19 @@
+# Dependencias
+node_modules/
+
+# Secretos / credenciales (NUNCA commitear claves de Admin SDK / service account)
+.env
+.env.*
+*serviceAccount*.json
+firebase-debug.log
+firebase-debug.*.log
+.firebase/
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Editores
+.vscode/
+.idea/
+*.swp
